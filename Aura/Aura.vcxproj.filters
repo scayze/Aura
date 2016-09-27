@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headerdateien">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien\Collision">
+      <UniqueIdentifier>{4078ad14-8736-4c0e-ad5a-41c2fd9d9d53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Collision\Math">
+      <UniqueIdentifier>{c3f57663-abc0-4674-a358-3cdef4a5fb2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Collision\Bodys">
+      <UniqueIdentifier>{b15410e3-b42a-483a-bf2f-97e4121ba1e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Objeckte">
+      <UniqueIdentifier>{e9889537-e2cb-4066-b473-6b54aec1befd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Objeckte\PartikelStuff">
+      <UniqueIdentifier>{6a8fe410-831b-4798-b924-8c5cb1f72896}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Steuerung und co">
+      <UniqueIdentifier>{c1a2e3da-f118-4474-b1b2-715cff3f92d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Objeckte\Terrain">
+      <UniqueIdentifier>{91098296-10b0-4713-85fd-953e4838fde4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Sonstiges">
+      <UniqueIdentifier>{ddd5fbc7-69cf-4288-9d95-605460002a4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Objeckte\Figuren">
+      <UniqueIdentifier>{94a1dd6e-4012-4685-bc44-413fdd2a1880}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Objeckte\Figuren\Spieler">
+      <UniqueIdentifier>{dff99583-89bb-4e50-850e-f4d6c0da6945}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Objeckte\Figuren\Gegner">
+      <UniqueIdentifier>{89612440-accd-4689-a6c6-d20c21339aa4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Objeckte\Figuren\Gegner\LaserLegerOderSo">
+      <UniqueIdentifier>{2e79a2a4-8ee5-447b-a995-c4323ea6eee7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Sonstiges\Buffs">
+      <UniqueIdentifier>{50040b76-e28e-47d5-816c-c01cb7d86970}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\GUI">
+      <UniqueIdentifier>{80b764d4-138f-4e13-8381-264c3a3df2c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\GUI\healthbar">
+      <UniqueIdentifier>{eba3aa65-e9a4-4a4c-aef5-80af46a08030}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Sonstiges\Pickup">
+      <UniqueIdentifier>{bf6e09de-9e2c-44ca-bdfd-d3cf171e51c7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PhysicsSystem.cpp">
+      <Filter>Headerdateien\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="math.cpp">
+      <Filter>Headerdateien\Collision\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Body.cpp">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClCompile>
+    <ClCompile Include="PolygonBody.cpp">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleBody.cpp">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClCompile>
+    <ClCompile Include="ChainBody.cpp">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClCompile>
+    <ClCompile Include="EdgeBody.cpp">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClCompile>
+    <ClCompile Include="Laser.cpp">
+      <Filter>Headerdateien\Objeckte\Figuren\Gegner\LaserLegerOderSo</Filter>
+    </ClCompile>
+    <ClCompile Include="Drone.cpp">
+      <Filter>Headerdateien\Objeckte\Figuren\Gegner\LaserLegerOderSo</Filter>
+    </ClCompile>
+    <ClCompile Include="Laserbox.cpp">
+      <Filter>Headerdateien\Objeckte\Figuren\Gegner\LaserLegerOderSo</Filter>
+    </ClCompile>
+    <ClCompile Include="Gegner.cpp">
+      <Filter>Headerdateien\Objeckte\Figuren\Gegner</Filter>
+    </ClCompile>
+    <ClCompile Include="Aura.cpp">
+      <Filter>Headerdateien\Objeckte\Figuren\Spieler</Filter>
+    </ClCompile>
+    <ClCompile Include="Spieler.cpp">
+      <Filter>Headerdateien\Objeckte\Figuren\Spieler</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleEmitter.cpp">
+      <Filter>Headerdateien\Objeckte\PartikelStuff</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle.cpp">
+      <Filter>Headerdateien\Objeckte\PartikelStuff</Filter>
+    </ClCompile>
+    <ClCompile Include="Steuerung.cpp">
+      <Filter>Headerdateien\Steuerung und co</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Headerdateien\Steuerung und co</Filter>
+    </ClCompile>
+    <ClCompile Include="Spielfeld.cpp">
+      <Filter>Headerdateien\Steuerung und co</Filter>
+    </ClCompile>
+    <ClCompile Include="Worldobject.cpp">
+      <Filter>Headerdateien\Objeckte</Filter>
+    </ClCompile>
+    <ClCompile Include="Terrain.cpp">
+      <Filter>Headerdateien\Objeckte\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="Grenze.cpp">
+      <Filter>Headerdateien\Objeckte\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Headerdateien\Sonstiges</Filter>
+    </ClCompile>
+    <ClCompile Include="Figur.cpp">
+      <Filter>Headerdateien\Objeckte\Figuren</Filter>
+    </ClCompile>
+    <ClCompile Include="Buff.cpp">
+      <Filter>Headerdateien\Sonstiges\Buffs</Filter>
+    </ClCompile>
+    <ClCompile Include="gui.cpp">
+      <Filter>Headerdateien\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="window.cpp">
+      <Filter>Headerdateien\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Healthbar.cpp">
+      <Filter>Headerdateien\GUI\healthbar</Filter>
+    </ClCompile>
+    <ClCompile Include="xpBar.cpp">
+      <Filter>Headerdateien\GUI\healthbar</Filter>
+    </ClCompile>
+    <ClCompile Include="xp.cpp">
+      <Filter>Headerdateien\Sonstiges\Pickup</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PhysicsSystem.h">
+      <Filter>Headerdateien\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="math.h">
+      <Filter>Headerdateien\Collision\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Body.h">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClInclude>
+    <ClInclude Include="PolygonBody.h">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleBody.h">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClInclude>
+    <ClInclude Include="ChainBody.h">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClInclude>
+    <ClInclude Include="EdgeBody.h">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClInclude>
+    <ClInclude Include="Laser.h">
+      <Filter>Headerdateien\Objeckte\Figuren\Gegner\LaserLegerOderSo</Filter>
+    </ClInclude>
+    <ClInclude Include="Drone.h">
+      <Filter>Headerdateien\Objeckte\Figuren\Gegner\LaserLegerOderSo</Filter>
+    </ClInclude>
+    <ClInclude Include="LaserBox.h">
+      <Filter>Headerdateien\Objeckte\Figuren\Gegner\LaserLegerOderSo</Filter>
+    </ClInclude>
+    <ClInclude Include="Gegner.h">
+      <Filter>Headerdateien\Objeckte\Figuren\Gegner</Filter>
+    </ClInclude>
+    <ClInclude Include="Aura.h">
+      <Filter>Headerdateien\Objeckte\Figuren\Spieler</Filter>
+    </ClInclude>
+    <ClInclude Include="Spieler.h">
+      <Filter>Headerdateien\Objeckte\Figuren\Spieler</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleEmitter.h">
+      <Filter>Headerdateien\Objeckte\PartikelStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle.h">
+      <Filter>Headerdateien\Objeckte\PartikelStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="Steuerung.h">
+      <Filter>Headerdateien\Steuerung und co</Filter>
+    </ClInclude>
+    <ClInclude Include="spielfeld.h">
+      <Filter>Headerdateien\Steuerung und co</Filter>
+    </ClInclude>
+    <ClInclude Include="Worldobject.h">
+      <Filter>Headerdateien\Objeckte</Filter>
+    </ClInclude>
+    <ClInclude Include="Terrain.h">
+      <Filter>Headerdateien\Objeckte\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="Grenze.h">
+      <Filter>Headerdateien\Objeckte\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Headerdateien\Sonstiges</Filter>
+    </ClInclude>
+    <ClInclude Include="Figur.h">
+      <Filter>Headerdateien\Objeckte\Figuren</Filter>
+    </ClInclude>
+    <ClInclude Include="Buff.h">
+      <Filter>Headerdateien\Sonstiges\Buffs</Filter>
+    </ClInclude>
+    <ClInclude Include="gui.h">
+      <Filter>Headerdateien\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="window.h">
+      <Filter>Headerdateien\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthBar.h">
+      <Filter>Headerdateien\GUI\healthbar</Filter>
+    </ClInclude>
+    <ClInclude Include="xpBar.h">
+      <Filter>Headerdateien\GUI\healthbar</Filter>
+    </ClInclude>
+    <ClInclude Include="xp.h">
+      <Filter>Headerdateien\Sonstiges\Pickup</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

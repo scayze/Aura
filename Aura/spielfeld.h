@@ -1,0 +1,49 @@
+#ifndef SPIELFELD_H
+#define SPIELFELD_H
+
+
+#include <SFML\Graphics.hpp>
+#include "PhysicsSystem.h"
+#include "gui.h"
+
+class WorldObject;
+class Spieler;
+
+
+class Spielfeld
+{
+	private:
+		float width;
+		float height;
+
+		Spieler * player;
+
+		PhysicsSystem pSystem;
+		GUI_System guiSystem;
+
+		std::vector<WorldObject*> objects;
+
+		sf::RenderTexture backgound;
+
+		sf::RenderWindow* rWindow;
+
+	public:
+		Spielfeld(sf::RenderWindow* window);
+
+		void tick();
+		void render();
+		Spieler * getPlayer();
+
+		template<typename T>
+		T* createObject(float x, float y)
+		{
+			T* obj = new T(x,y);
+			obj->init(this);
+			pSystem.addBody(obj->getBody());
+			objects.push_back(obj);
+			return obj;
+		};
+
+};
+
+#endif
