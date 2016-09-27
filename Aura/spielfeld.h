@@ -33,6 +33,8 @@ class Spielfeld
 		void tick();
 		void render();
 		Spieler * getPlayer();
+		sf::RenderTexture * getBackgroundTexture();
+		void updateBackground();
 
 		template<typename T>
 		T* createObject(float x, float y)

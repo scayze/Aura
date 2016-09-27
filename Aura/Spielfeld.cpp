@@ -73,12 +73,12 @@ Spielfeld::Spielfeld(sf::RenderWindow *window)
 	pSystem.addBody(p3_p4);
 	pSystem.addBody(p4_p1);
 
-	//Gui
 
+	//Background
 	backgound.create(1000, 800);
 	backgound.clear(sf::Color(25, 25, 25));
 
-
+	//Gui
 	HealthBar * hpBar = new HealthBar;
 	hpBar->setPlayer(player);
 	guiSystem.addWindow(hpBar);
@@ -111,8 +111,10 @@ void Spielfeld::tick()
 
 void Spielfeld::render()
 {
-
-	rWindow->draw(sf::Sprite(backgound.getTexture()));
+	sf::Sprite bg;
+	bg.setTexture(backgound.getTexture());
+	bg.setPosition(0, 0);
+	rWindow->draw(bg);
 	for(unsigned int i=0; i < objects.size(); i++)
 	{
 		if(objects[i]->flag_visible)
@@ -131,4 +133,14 @@ void Spielfeld::render()
 Spieler * Spielfeld::getPlayer()
 {
 	return player;
+}
+
+sf::RenderTexture * Spielfeld::getBackgroundTexture()
+{
+	return &backgound;
+}
+
+void Spielfeld::updateBackground()
+{
+	backgound.display();
 }

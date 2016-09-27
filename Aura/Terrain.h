@@ -8,6 +8,7 @@ class Terrain : public WorldObject
 	private:
 
 		sf::VertexArray vertexArray;
+		bool drawn = false;
 
 	public:
 		Terrain(float x,float y);

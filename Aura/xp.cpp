@@ -4,7 +4,7 @@
 
 Xp::Xp(float x, float y) : WorldObject(x,y)
 {
-	speeeeeed = 5;
+	speeeeeed = 6;
 	amount = 1;
 	texture.loadFromFile("Ressources/Graphics/xp.png");
 	type = t_playerOnly;

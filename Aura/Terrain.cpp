@@ -3,36 +3,48 @@
 
 Terrain::Terrain(float x, float y) : WorldObject(x,y)
 {
+
+	//terrain type
 	type = t_terrain;
 
+	//Change Body type to a Chain
 	delete body; 
 	body = new ChainBody();
 	body->setPos(x, y);
 
 	body->setMass(10);
+
+	//Non movable
 	body->isStatic = true;
-
-	//updateVertexArray();
-
 
 }
 
 void Terrain::render(sf::RenderWindow * rW)
 {
-	for (unsigned int i = 0; i < vertexArray.getVertexCount(); i++)
+	//Draw only once to background texture of spielfeld
+	if (!drawn)
 	{
-		vertexArray[i].color = sf::Color(80,80,80);
-	}
-	vertexArray.setPrimitiveType(sf::TrianglesFan);
+		for (unsigned int i = 0; i < vertexArray.getVertexCount(); i++)
+		{
+			vertexArray[i].color = sf::Color(80, 80, 80);
+		}
+		vertexArray.setPrimitiveType(sf::TrianglesFan);
 
-	rW->draw(vertexArray);
+		spielfeld->getBackgroundTexture()->draw(vertexArray);
+		//rW->draw(vertexArray);
 
-	for (unsigned int i = 0; i < vertexArray.getVertexCount(); i++)
-	{
-		vertexArray[i].color = sf::Color(200,200,200);
+		for (unsigned int i = 0; i < vertexArray.getVertexCount(); i++)
+		{
+			vertexArray[i].color = sf::Color(200, 200, 200);
+		}
+		vertexArray.setPrimitiveType(sf::LinesStrip);
+
+		spielfeld->getBackgroundTexture()->draw(vertexArray);
+		//rW->draw(vertexArray);
+
+		drawn = true;
+		spielfeld->updateBackground();
 	}
-	vertexArray.setPrimitiveType(sf::LinesStrip);
-	rW->draw(vertexArray);
 }
 
 void Terrain::tick()
