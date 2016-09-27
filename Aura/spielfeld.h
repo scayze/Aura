@@ -4,7 +4,7 @@
 
 #include <SFML\Graphics.hpp>
 #include "Physics/PhysicsSystem.h"
-#include "gui.h"
+#include "GUI/gui.h"
 
 class WorldObject;
 class Spieler;

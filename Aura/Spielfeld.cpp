@@ -7,8 +7,8 @@
 #include "Terrain.h"
 #include "Drone.h"
 
-#include "HealthBar.h"
-#include "xpBar.h"
+#include "GUI/windows/HealthBar.h"
+#include "GUI/windows/xpBar.h"
 
 
 Spielfeld::Spielfeld(sf::RenderWindow *window)

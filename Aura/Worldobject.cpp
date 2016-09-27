@@ -4,7 +4,7 @@
 
 WorldObject::WorldObject(float x, float y)
 {
-	texture.loadFromFile("bla.png");
+	texture.loadFromFile("Ressources/Graphics/bla.png");
 
 	type = t_noCollide;
 

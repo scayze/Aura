@@ -29,7 +29,7 @@ void LaserBox::tick()
 	timer--;
 	if (timer == chargeTime)
 	{
-		texture.loadFromFile("LaserBoxFireing.png");
+		texture.loadFromFile("Ressources/Graphics/LaserBoxFireing.png");
 
 		if (!(Math::vectorSquaredDistance(body->getPos(), spielfeld->getPlayer()->getBody()->getPos()) < range * range))
 		{
@@ -42,7 +42,7 @@ void LaserBox::tick()
 
 		timer = timeBetweenShots;
 		fireLaser();
-		texture.loadFromFile("LaserBox.png");
+		texture.loadFromFile("Ressources/Graphics/LaserBox.png");
 
 	}
 }

@@ -77,10 +77,9 @@
     <ClCompile Include="Drone.cpp" />
     <ClCompile Include="Physics\Bodys\EdgeBody.cpp" />
     <ClCompile Include="Figur.cpp" />
-    <ClCompile Include="Grenze.cpp" />
     <ClCompile Include="Gegner.cpp" />
-    <ClCompile Include="gui.cpp" />
-    <ClCompile Include="Healthbar.cpp" />
+    <ClCompile Include="GUI\gui.cpp" />
+    <ClCompile Include="GUI\windows\Healthbar.cpp" />
     <ClCompile Include="Laser.cpp" />
     <ClCompile Include="Laserbox.cpp" />
     <ClCompile Include="main.cpp" />
@@ -93,10 +92,10 @@
     <ClCompile Include="Spielfeld.cpp" />
     <ClCompile Include="Steuerung.cpp" />
     <ClCompile Include="Terrain.cpp" />
-    <ClCompile Include="window.cpp" />
+    <ClCompile Include="GUI\windows\window.cpp" />
     <ClCompile Include="Worldobject.cpp" />
     <ClCompile Include="xp.cpp" />
-    <ClCompile Include="xpBar.cpp" />
+    <ClCompile Include="GUI\windows\xpBar.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
@@ -108,10 +107,9 @@
     <ClInclude Include="Drone.h" />
     <ClInclude Include="Physics\Bodys\EdgeBody.h" />
     <ClInclude Include="Figur.h" />
-    <ClInclude Include="Grenze.h" />
     <ClInclude Include="Gegner.h" />
-    <ClInclude Include="gui.h" />
-    <ClInclude Include="HealthBar.h" />
+    <ClInclude Include="GUI\gui.h" />
+    <ClInclude Include="GUI\windows\HealthBar.h" />
     <ClInclude Include="Laser.h" />
     <ClInclude Include="LaserBox.h" />
     <ClInclude Include="math.h" />
@@ -123,10 +121,10 @@
     <ClInclude Include="spielfeld.h" />
     <ClInclude Include="Steuerung.h" />
     <ClInclude Include="Terrain.h" />
-    <ClInclude Include="window.h" />
+    <ClInclude Include="GUI\windows\window.h" />
     <ClInclude Include="Worldobject.h" />
     <ClInclude Include="xp.h" />
-    <ClInclude Include="xpBar.h" />
+    <ClInclude Include="GUI\windows\xpBar.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

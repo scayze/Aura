@@ -4,7 +4,7 @@
 Aura::Aura(float x, float y) : WorldObject(x,y)
 {
     type = t_aura;
-    texture.loadFromFile("Sword.png");
+    texture.loadFromFile("Ressources/Graphics/Sword.png");
     rotspd = 8;
 
 	delete body;

@@ -101,9 +101,6 @@
     <ClCompile Include="Terrain.cpp">
       <Filter>Headerdateien\Objeckte\Terrain</Filter>
     </ClCompile>
-    <ClCompile Include="Grenze.cpp">
-      <Filter>Headerdateien\Objeckte\Terrain</Filter>
-    </ClCompile>
     <ClCompile Include="Animation.cpp">
       <Filter>Headerdateien\Sonstiges</Filter>
     </ClCompile>
@@ -112,18 +109,6 @@
     </ClCompile>
     <ClCompile Include="Buff.cpp">
       <Filter>Headerdateien\Sonstiges\Buffs</Filter>
-    </ClCompile>
-    <ClCompile Include="gui.cpp">
-      <Filter>Headerdateien\GUI</Filter>
-    </ClCompile>
-    <ClCompile Include="window.cpp">
-      <Filter>Headerdateien\GUI</Filter>
-    </ClCompile>
-    <ClCompile Include="Healthbar.cpp">
-      <Filter>Headerdateien\GUI\healthbar</Filter>
-    </ClCompile>
-    <ClCompile Include="xpBar.cpp">
-      <Filter>Headerdateien\GUI\healthbar</Filter>
     </ClCompile>
     <ClCompile Include="xp.cpp">
       <Filter>Headerdateien\Sonstiges\Pickup</Filter>
@@ -145,6 +130,18 @@
     </ClCompile>
     <ClCompile Include="Physics\Bodys\Body.cpp">
       <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\gui.cpp">
+      <Filter>Headerdateien\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\windows\xpBar.cpp">
+      <Filter>Headerdateien\GUI\healthbar</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\windows\Healthbar.cpp">
+      <Filter>Headerdateien\GUI\healthbar</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\windows\window.cpp">
+      <Filter>Headerdateien\GUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -187,9 +184,6 @@
     <ClInclude Include="Terrain.h">
       <Filter>Headerdateien\Objeckte\Terrain</Filter>
     </ClInclude>
-    <ClInclude Include="Grenze.h">
-      <Filter>Headerdateien\Objeckte\Terrain</Filter>
-    </ClInclude>
     <ClInclude Include="Animation.h">
       <Filter>Headerdateien\Sonstiges</Filter>
     </ClInclude>
@@ -198,18 +192,6 @@
     </ClInclude>
     <ClInclude Include="Buff.h">
       <Filter>Headerdateien\Sonstiges\Buffs</Filter>
-    </ClInclude>
-    <ClInclude Include="gui.h">
-      <Filter>Headerdateien\GUI</Filter>
-    </ClInclude>
-    <ClInclude Include="window.h">
-      <Filter>Headerdateien\GUI</Filter>
-    </ClInclude>
-    <ClInclude Include="HealthBar.h">
-      <Filter>Headerdateien\GUI\healthbar</Filter>
-    </ClInclude>
-    <ClInclude Include="xpBar.h">
-      <Filter>Headerdateien\GUI\healthbar</Filter>
     </ClInclude>
     <ClInclude Include="xp.h">
       <Filter>Headerdateien\Sonstiges\Pickup</Filter>
@@ -231,6 +213,18 @@
     </ClInclude>
     <ClInclude Include="Physics\Bodys\Body.h">
       <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\gui.h">
+      <Filter>Headerdateien\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\windows\xpBar.h">
+      <Filter>Headerdateien\GUI\healthbar</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\windows\HealthBar.h">
+      <Filter>Headerdateien\GUI\healthbar</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\windows\window.h">
+      <Filter>Headerdateien\GUI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

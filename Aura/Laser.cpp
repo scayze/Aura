@@ -9,7 +9,7 @@ Laser::Laser(float x, float y) : WorldObject(x, y)
 	body->setPos(x, y);
 	body->setMass(-1);
 
-	texture.loadFromFile("Laser.png");
+	texture.loadFromFile("Ressources/Graphics/Laser.png");
 	sprite.setScale(350, 1);
 
 	ticksUntilDamage = 15;

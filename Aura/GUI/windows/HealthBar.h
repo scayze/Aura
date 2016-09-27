@@ -1,23 +1,23 @@
-#ifndef XpBar_H
-#define XpBar_H
+#ifndef HealthBar_H
+#define HealthBar_H
 
 #include "window.h"
-#include "Spieler.h"
+#include "../../Spieler.h"
 #include <SFML\Graphics.hpp>
 
-class XpBar : public Window
+class HealthBar : public Window
 {
 private:
 	Spieler * player;
 	sf::RectangleShape backGround;
 	sf::RectangleShape diffBar;
-	sf::RectangleShape xpBar;
+	sf::RectangleShape redBar;
 
 	sf::Font textfont;
-	sf::Text xp;
+	sf::Text hp;
 
 public:
-	XpBar();
+	HealthBar();
 	void setPlayer(Spieler * s);
 	void tick();
 };

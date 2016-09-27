@@ -2,7 +2,7 @@
 #define GUI_System_H
 
 #include <SFML\Graphics.hpp>
-#include "window.h"
+#include "windows/window.h"
 
 class GUI_System
 {
