@@ -3,7 +3,7 @@
 
 LaserBox::LaserBox(float x, float y) : Gegner(x, y)
 {
-	texture.loadFromFile("LaserBox.png");
+	texture.loadFromFile("Ressources/Graphics/LaserBox.png");
 	sprite.setScale(1.5, 1.5);
 
 	range = 350;
