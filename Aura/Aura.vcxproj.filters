@@ -59,26 +59,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PhysicsSystem.cpp">
-      <Filter>Headerdateien\Collision</Filter>
-    </ClCompile>
     <ClCompile Include="math.cpp">
       <Filter>Headerdateien\Collision\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="Body.cpp">
-      <Filter>Headerdateien\Collision\Bodys</Filter>
-    </ClCompile>
-    <ClCompile Include="PolygonBody.cpp">
-      <Filter>Headerdateien\Collision\Bodys</Filter>
-    </ClCompile>
-    <ClCompile Include="CircleBody.cpp">
-      <Filter>Headerdateien\Collision\Bodys</Filter>
-    </ClCompile>
-    <ClCompile Include="ChainBody.cpp">
-      <Filter>Headerdateien\Collision\Bodys</Filter>
-    </ClCompile>
-    <ClCompile Include="EdgeBody.cpp">
-      <Filter>Headerdateien\Collision\Bodys</Filter>
     </ClCompile>
     <ClCompile Include="Laser.cpp">
       <Filter>Headerdateien\Objeckte\Figuren\Gegner\LaserLegerOderSo</Filter>
@@ -146,28 +128,28 @@
     <ClCompile Include="xp.cpp">
       <Filter>Headerdateien\Sonstiges\Pickup</Filter>
     </ClCompile>
+    <ClCompile Include="Physics\PhysicsSystem.cpp">
+      <Filter>Headerdateien\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\Bodys\ChainBody.cpp">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\Bodys\CircleBody.cpp">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\Bodys\EdgeBody.cpp">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\Bodys\PolygonBody.cpp">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\Bodys\Body.cpp">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PhysicsSystem.h">
-      <Filter>Headerdateien\Collision</Filter>
-    </ClInclude>
     <ClInclude Include="math.h">
       <Filter>Headerdateien\Collision\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Body.h">
-      <Filter>Headerdateien\Collision\Bodys</Filter>
-    </ClInclude>
-    <ClInclude Include="PolygonBody.h">
-      <Filter>Headerdateien\Collision\Bodys</Filter>
-    </ClInclude>
-    <ClInclude Include="CircleBody.h">
-      <Filter>Headerdateien\Collision\Bodys</Filter>
-    </ClInclude>
-    <ClInclude Include="ChainBody.h">
-      <Filter>Headerdateien\Collision\Bodys</Filter>
-    </ClInclude>
-    <ClInclude Include="EdgeBody.h">
-      <Filter>Headerdateien\Collision\Bodys</Filter>
     </ClInclude>
     <ClInclude Include="Laser.h">
       <Filter>Headerdateien\Objeckte\Figuren\Gegner\LaserLegerOderSo</Filter>
@@ -231,6 +213,24 @@
     </ClInclude>
     <ClInclude Include="xp.h">
       <Filter>Headerdateien\Sonstiges\Pickup</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\PhysicsSystem.h">
+      <Filter>Headerdateien\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Bodys\ChainBody.h">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Bodys\CircleBody.h">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Bodys\EdgeBody.h">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Bodys\PolygonBody.h">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Bodys\Body.h">
+      <Filter>Headerdateien\Collision\Bodys</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

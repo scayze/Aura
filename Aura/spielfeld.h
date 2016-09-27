@@ -3,7 +3,7 @@
 
 
 #include <SFML\Graphics.hpp>
-#include "PhysicsSystem.h"
+#include "Physics/PhysicsSystem.h"
 #include "gui.h"
 
 class WorldObject;

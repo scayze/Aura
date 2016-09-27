@@ -70,12 +70,12 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Aura.cpp" />
-    <ClCompile Include="Body.cpp" />
+    <ClCompile Include="Physics\Bodys\Body.cpp" />
     <ClCompile Include="Buff.cpp" />
-    <ClCompile Include="ChainBody.cpp" />
-    <ClCompile Include="CircleBody.cpp" />
+    <ClCompile Include="Physics\Bodys\ChainBody.cpp" />
+    <ClCompile Include="Physics\Bodys\CircleBody.cpp" />
     <ClCompile Include="Drone.cpp" />
-    <ClCompile Include="EdgeBody.cpp" />
+    <ClCompile Include="Physics\Bodys\EdgeBody.cpp" />
     <ClCompile Include="Figur.cpp" />
     <ClCompile Include="Grenze.cpp" />
     <ClCompile Include="Gegner.cpp" />
@@ -87,8 +87,8 @@
     <ClCompile Include="math.cpp" />
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="ParticleEmitter.cpp" />
-    <ClCompile Include="PhysicsSystem.cpp" />
-    <ClCompile Include="PolygonBody.cpp" />
+    <ClCompile Include="Physics\PhysicsSystem.cpp" />
+    <ClCompile Include="Physics\Bodys\PolygonBody.cpp" />
     <ClCompile Include="Spieler.cpp" />
     <ClCompile Include="Spielfeld.cpp" />
     <ClCompile Include="Steuerung.cpp" />
@@ -101,12 +101,12 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Aura.h" />
-    <ClInclude Include="Body.h" />
+    <ClInclude Include="Physics\Bodys\Body.h" />
     <ClInclude Include="Buff.h" />
-    <ClInclude Include="ChainBody.h" />
-    <ClInclude Include="CircleBody.h" />
+    <ClInclude Include="Physics\Bodys\ChainBody.h" />
+    <ClInclude Include="Physics\Bodys\CircleBody.h" />
     <ClInclude Include="Drone.h" />
-    <ClInclude Include="EdgeBody.h" />
+    <ClInclude Include="Physics\Bodys\EdgeBody.h" />
     <ClInclude Include="Figur.h" />
     <ClInclude Include="Grenze.h" />
     <ClInclude Include="Gegner.h" />
@@ -117,8 +117,8 @@
     <ClInclude Include="math.h" />
     <ClInclude Include="Particle.h" />
     <ClInclude Include="ParticleEmitter.h" />
-    <ClInclude Include="PhysicsSystem.h" />
-    <ClInclude Include="PolygonBody.h" />
+    <ClInclude Include="Physics\PhysicsSystem.h" />
+    <ClInclude Include="Physics\Bodys\PolygonBody.h" />
     <ClInclude Include="Spieler.h" />
     <ClInclude Include="spielfeld.h" />
     <ClInclude Include="Steuerung.h" />

@@ -3,8 +3,8 @@
 
 #include <SFML\Graphics.hpp>
 #include "spielfeld.h"
-#include "CircleBody.h"
-#include "PolygonBody.h"
+#include "Physics/Bodys/CircleBody.h"
+#include "Physics/Bodys/PolygonBody.h"
 #include "math.h"
 
 enum type

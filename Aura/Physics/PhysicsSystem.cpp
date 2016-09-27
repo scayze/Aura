@@ -1,5 +1,5 @@
 #include "PhysicsSystem.h"
-#include "Worldobject.h"
+#include "../Worldobject.h"
 #include "math.h"
 #include <iostream>
 

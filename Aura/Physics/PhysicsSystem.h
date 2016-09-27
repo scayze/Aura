@@ -2,10 +2,10 @@
 #define PHYSICSSYSTEM_H
 
 #include <deque>
-#include "PolygonBody.h"
-#include "CircleBody.h"
-#include "ChainBody.h"
-#include "EdgeBody.h"
+#include "Bodys/PolygonBody.h"
+#include "Bodys/CircleBody.h"
+#include "Bodys/ChainBody.h"
+#include "Bodys/EdgeBody.h"
 
 class PhysicsSystem
 {
