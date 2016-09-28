@@ -11,6 +11,13 @@ enum bodyType
 	Chain = 3
 };
 
+struct AABB
+{
+	sf::Vector2f center;
+	sf::Vector2f topLeft;
+	sf::Vector2f downRight;
+};
+
 class Body
 {
 	protected:
@@ -20,6 +27,7 @@ class Body
 		int mass;
 		void * owner;
 
+		AABB aabb;
 		sf::FloatRect AABB;
 
 

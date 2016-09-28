@@ -15,6 +15,7 @@ Drone::Drone(float x, float y) : Gegner(x, y)
 	destination.x = rand();
 	destination.y = rand();
 	destination = Math::vectorSetMagnitude(destination, 80);
+	static_cast<CircleBody*>(body)->setRadius(9);
 }
 
 void Drone::tick()
