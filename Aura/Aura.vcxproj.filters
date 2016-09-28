@@ -57,6 +57,9 @@
     <Filter Include="Headerdateien\Sonstiges\Pickup">
       <UniqueIdentifier>{bf6e09de-9e2c-44ca-bdfd-d3cf171e51c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headerdateien\Objeckte\Figuren\Gegner\Rammy">
+      <UniqueIdentifier>{f2bab6d1-e54b-4c4f-aed3-afe8195f41dc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="math.cpp">
@@ -147,6 +150,9 @@
     <ClCompile Include="RessourceManager\Manager.cpp" />
     <ClCompile Include="RessourceManager\Managers\TextureManager.cpp" />
     <ClCompile Include="RessourceManager\Managers\FontManager.cpp" />
+    <ClCompile Include="rammy.cpp">
+      <Filter>Headerdateien\Objeckte\Figuren\Gegner\Rammy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="math.h">
@@ -241,6 +247,9 @@
     </ClInclude>
     <ClInclude Include="RessourceManager\Managers\FontManager.h">
       <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="rammy.h">
+      <Filter>Headerdateien\Objeckte\Figuren\Gegner\Rammy</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

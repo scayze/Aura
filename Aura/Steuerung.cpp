@@ -22,7 +22,6 @@ Steuerung::Steuerung()
 
 void Steuerung::run()
 {
-
 	while(rWindow.isOpen())
 	{
 		sf::Event event;

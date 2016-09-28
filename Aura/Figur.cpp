@@ -33,6 +33,8 @@ void Figur::tick()
 	//Red flashing
 	if (invincibleTimer >= 0)
 	{
+		int * n = new int;
+		//tweeny::from(4).to(9)
 		sprite.setColor(sf::Color(255, 255 - invincibleTimer * 9, 255 - invincibleTimer * 9));
 	}
 

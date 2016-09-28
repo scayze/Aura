@@ -1,5 +1,6 @@
 #include "Body.h"
 
+
 Body::Body()
 {
 	pos.x = 0;
@@ -7,7 +8,7 @@ Body::Body()
 	mass = 10;
 	type = Circle;
 	isStatic = false;
-	owner = NULL;
+	owner = 0;
 }
 
 Body::Body(float xpos,float ypos)

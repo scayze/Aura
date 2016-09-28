@@ -17,20 +17,8 @@ Spielfeld::Spielfeld(sf::RenderWindow *window)
 	height=60;
 	rWindow = window;
 
-
-
 	//Objects
 	player = createObject<Spieler>(30, 30);
-	createObject<Drone>(300.f, 350.f);
-	createObject<Drone>(500, 350.f);
-	createObject<Drone>(700, 400);
-	createObject<Drone>(300.f, 200);
-
-	createObject<Drone>(300.f, 350.f);
-	createObject<Drone>(500, 350.f);
-	createObject<Drone>(700, 400);
-	createObject<Drone>(300.f, 200);
-
 	createObject<Drone>(300.f, 350.f);
 	createObject<Drone>(500, 350.f);
 	createObject<Drone>(700, 400);

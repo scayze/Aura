@@ -90,6 +90,7 @@
     <ClCompile Include="Physics\Bodys\PolygonBody.cpp" />
     <ClCompile Include="RessourceManager\Manager.cpp" />
     <ClCompile Include="RessourceManager\Managers\FontManager.cpp" />
+    <ClCompile Include="rammy.cpp" />
     <ClCompile Include="RessourceManager\Managers\TextureManager.cpp" />
     <ClCompile Include="RessourceManager\RessourceManager.cpp" />
     <ClCompile Include="Spieler.cpp" />
@@ -123,6 +124,7 @@
     <ClInclude Include="Physics\Bodys\PolygonBody.h" />
     <ClInclude Include="RessourceManager\Manager.h" />
     <ClInclude Include="RessourceManager\Managers\FontManager.h" />
+    <ClInclude Include="rammy.h" />
     <ClInclude Include="RessourceManager\Managers\TextureManager.h" />
     <ClInclude Include="RessourceManager\RessourceManager.h" />
     <ClInclude Include="Spieler.h" />
