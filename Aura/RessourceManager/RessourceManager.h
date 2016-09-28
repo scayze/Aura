@@ -12,6 +12,7 @@ private:
 public:
 
 	static const sf::Image& getTexture(std::string path);
+	static void loadTexture(sf::Texture& tex, std::string path);
 	static const sf::Font& getFont(std::string path);
 };
 

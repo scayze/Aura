@@ -6,7 +6,7 @@
 Spieler::Spieler(float x, float y) : Figur(x,y)
 {
 	type = t_spieler;
-	texture.loadFromImage(RessourceManager::getTexture("Ressources/Graphics/Player.png"));
+	RessourceManager::loadTexture(texture,"Player.png");
 	animation = Animation(&sprite,6,4);
 	sprite.setTextureRect(sf::IntRect(0,0,32,48));
 	speed = 5;

@@ -5,7 +5,7 @@ ParticleEmitter::ParticleEmitter(float x, float y) : WorldObject(x,y)
 {
 	density = 0.15f;
 	flag_visible = false;
-	texture.loadFromFile("Ressources/Graphics/fire.png");
+	RessourceManager::loadTexture(texture,"fire.png");
 }
 
 void ParticleEmitter::init(Spielfeld * spiel)
