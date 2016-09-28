@@ -27,6 +27,7 @@ void Aura::tick()
 	WorldObject::tick();
 	sprite.setRotation(sprite.getRotation()+rotspd);
 	EdgeBody * b = static_cast<EdgeBody*>(body);
+
 	b->setP2(Math::vectorRotateAroundPoint(b->getP2(), sf::Vector2f(0,0), rotspd / 180.f * Math::PI()));
 }
 
@@ -36,4 +37,13 @@ void Aura::collide(WorldObject * object)
 	{
 		static_cast<Figur*>(object)->dealDamage(damage);
 	}
+}
+
+float Aura::getRotspeed()
+{
+	return rotspd;
+}
+void Aura::setRotspeed(float rs)
+{
+	rotspd = rs;
 }

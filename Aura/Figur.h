@@ -22,7 +22,7 @@ public:
 	virtual void tick();
 	virtual void init(Spielfeld * spielfeld);
 
-	void dealDamage(int n);
+	virtual void dealDamage(int n);
 	void heal(int n);
 
 	int getHealthPoints();

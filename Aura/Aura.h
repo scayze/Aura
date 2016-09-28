@@ -17,6 +17,8 @@ class Aura : public WorldObject
 		void collide(WorldObject * object);
 		void init(Spielfeld * spiel);
 		void tick();
+		float getRotspeed();
+		void setRotspeed(float rs);
 };
 
 #endif

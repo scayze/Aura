@@ -203,3 +203,11 @@ int Spieler::getXpNeeded()
 {
 	return xpUntilNextLevel;
 }
+
+void Spieler::dealDamage(int n)
+{
+	if (invincibleTimer <= 0)	aura->setRotspeed(-aura->getRotspeed());
+	Figur::dealDamage(n);
+
+
+}
