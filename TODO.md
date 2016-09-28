@@ -4,7 +4,7 @@
 
 * Design and Prototype a few more Enemies
 * Add Wave system (tinyxml?)
-* Add Channging Terrain every few waves (tinyxml?)
+* Add Changing Terrain every few waves (tinyxml?)
 * Add Deathscreen instead of crash
 
 ###Visual:
