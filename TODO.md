@@ -3,8 +3,10 @@
 ###Gameplay:###
 
 * Design and Prototype a few more Enemies
+* Add Monster Spawners
+* Bosses?
 * Add Wave system (tinyxml?)
-* Add Channging Terrain every few waves (tinyxml?)
+* Add Changing Terrain every few waves (tinyxml?)
 * Add Deathscreen instead of crash
 
 ###Visual:
@@ -14,7 +16,7 @@
 
 ###Performance:
 
-* Add custom AABB other than sfml's floatRect
+* ~~Add custom AABB other than sfml's floatRect~~ __(Done)__
 
 ###Code Design:
 
