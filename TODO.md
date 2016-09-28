@@ -19,7 +19,7 @@
 ###Code Design:
 
 * RessourceManger templates
-* RessourceManager get(FileToLoad, std::string path)
+* ~~RessourceManager `loadTexture(sf::Texture, std::string path)`~~ __(Done)__
 * Drone's code made with state variable for diagramms
 
 ###Bugs:
