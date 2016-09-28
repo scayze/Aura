@@ -2,7 +2,7 @@
 
 ###Gameplay:###
 
-* Design and Prototype a few more Enemies
+* Design and Prototype a few more Enemies (about 4 more)
 * Add Monster Spawners
 * Bosses?
 * Add Wave system (tinyxml?)
