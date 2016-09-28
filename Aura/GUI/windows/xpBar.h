@@ -13,7 +13,6 @@ private:
 	sf::RectangleShape diffBar;
 	sf::RectangleShape xpBar;
 
-	sf::Font textfont;
 	sf::Text xp;
 
 public:

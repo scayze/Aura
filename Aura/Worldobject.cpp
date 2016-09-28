@@ -1,10 +1,11 @@
 #include "Worldobject.h"
+
 #include <iostream>
 
 
 WorldObject::WorldObject(float x, float y)
 {
-	texture.loadFromFile("Ressources/Graphics/bla.png");
+	texture.loadFromImage(RessourceManager::getTexture("Ressources/Graphics/bla.png"));
 
 	type = t_noCollide;
 

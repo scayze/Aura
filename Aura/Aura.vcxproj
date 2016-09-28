@@ -88,6 +88,10 @@
     <ClCompile Include="ParticleEmitter.cpp" />
     <ClCompile Include="Physics\PhysicsSystem.cpp" />
     <ClCompile Include="Physics\Bodys\PolygonBody.cpp" />
+    <ClCompile Include="RessourceManager\Manager.cpp" />
+    <ClCompile Include="RessourceManager\Managers\FontManager.cpp" />
+    <ClCompile Include="RessourceManager\Managers\TextureManager.cpp" />
+    <ClCompile Include="RessourceManager\RessourceManager.cpp" />
     <ClCompile Include="Spieler.cpp" />
     <ClCompile Include="Spielfeld.cpp" />
     <ClCompile Include="Steuerung.cpp" />
@@ -117,6 +121,10 @@
     <ClInclude Include="ParticleEmitter.h" />
     <ClInclude Include="Physics\PhysicsSystem.h" />
     <ClInclude Include="Physics\Bodys\PolygonBody.h" />
+    <ClInclude Include="RessourceManager\Manager.h" />
+    <ClInclude Include="RessourceManager\Managers\FontManager.h" />
+    <ClInclude Include="RessourceManager\Managers\TextureManager.h" />
+    <ClInclude Include="RessourceManager\RessourceManager.h" />
     <ClInclude Include="Spieler.h" />
     <ClInclude Include="spielfeld.h" />
     <ClInclude Include="Steuerung.h" />

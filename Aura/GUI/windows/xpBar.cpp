@@ -16,10 +16,10 @@ XpBar::XpBar()
 	diffBar.setSize(sf::Vector2f(backGround.getSize().x, 0));
 	diffBar.setFillColor(sf::Color(20, 20, 200));
 
-	textfont.loadFromFile("Ressources/fonts/emulogic.ttf");
+	//textfont.lo(RessourceManager::getTexture("Ressources/fonts/emulogic.ttf");
 
 	//hp.setCharacterSize(20);
-	xp.setFont(textfont);
+	xp.setFont(RessourceManager::getFont("Ressources/fonts/emulogic.ttf"));
 	xp.setCharacterSize(9);
 	xp.setColor(sf::Color(5, 5, 250));
 	xp.setPosition(backGround.getPosition().x + backGround.getSize().x / 2, backGround.getPosition().y + backGround.getSize().y / 2 - 1);

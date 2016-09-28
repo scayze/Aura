@@ -143,6 +143,10 @@
     <ClCompile Include="GUI\windows\window.cpp">
       <Filter>Headerdateien\GUI</Filter>
     </ClCompile>
+    <ClCompile Include="RessourceManager\RessourceManager.cpp" />
+    <ClCompile Include="RessourceManager\Manager.cpp" />
+    <ClCompile Include="RessourceManager\Managers\TextureManager.cpp" />
+    <ClCompile Include="RessourceManager\Managers\FontManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="math.h">
@@ -225,6 +229,18 @@
     </ClInclude>
     <ClInclude Include="GUI\windows\window.h">
       <Filter>Headerdateien\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="RessourceManager\RessourceManager.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="RessourceManager\Manager.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="RessourceManager\Managers\TextureManager.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="RessourceManager\Managers\FontManager.h">
+      <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
