@@ -249,7 +249,7 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="rammy.h">
-      <Filter>Headerdateien\Objeckte\Figuren\Gegner\Rammy</Filter>
+      <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

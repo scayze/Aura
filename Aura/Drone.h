@@ -8,7 +8,6 @@ class Drone : public Gegner
 {
 private:
 
-	float speed = 6.f;
 	sf::Vector2f destination;
 
 	sf::Vector2f vel;

@@ -14,6 +14,7 @@ protected:
 	int invincibleTimer = 0;
 	int timeInvincible = 30;
 
+	float speed;
 	int xpDrop;
 
 

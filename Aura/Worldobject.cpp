@@ -12,7 +12,6 @@ WorldObject::WorldObject(float x, float y)
 	body = new CircleBody();
 
 	body->setPos(x,y);
-	speed = 6.f;
 
 	flag_destroy = false;
 	flag_visible = true;

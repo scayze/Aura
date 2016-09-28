@@ -32,7 +32,7 @@ class WorldObject
 		sf::Sprite sprite;
 
 		Body * body;
-		float speed;
+
 
 
 

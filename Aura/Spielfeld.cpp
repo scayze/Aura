@@ -5,7 +5,9 @@
 #include <iostream>
 #include "ParticleEmitter.h"
 #include "Terrain.h"
+
 #include "Drone.h"
+#include "rammy.h"
 
 #include "GUI/windows/HealthBar.h"
 #include "GUI/windows/xpBar.h"
@@ -19,10 +21,24 @@ Spielfeld::Spielfeld(sf::RenderWindow *window)
 
 	//Objects
 	player = createObject<Spieler>(30, 30);
-	createObject<Drone>(300.f, 350.f);
-	createObject<Drone>(500, 350.f);
-	createObject<Drone>(700, 400);
-	createObject<Drone>(300.f, 200);
+	createObject<Rammy>(300.f, 350.f);
+	createObject<Rammy>(500, 350.f);
+	createObject<Rammy>(700, 400);
+	createObject<Rammy>(300.f, 200);
+
+	createObject<Rammy>(300.f, 350.f);
+	createObject<Rammy>(500, 350.f);
+	createObject<Rammy>(700, 400);
+	createObject<Rammy>(300.f, 200);
+	createObject<Rammy>(300.f, 350.f);
+	createObject<Rammy>(500, 350.f);
+	createObject<Rammy>(700, 400);
+	createObject<Rammy>(300.f, 200);
+
+
+	//createObject<Drone>(500, 350.f);
+	//createObject<Drone>(700, 400);
+	//createObject<Drone>(300.f, 200);
 
 
 	//createObject<ParticleEmitter>(250.f,250.f);

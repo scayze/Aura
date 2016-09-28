@@ -122,9 +122,9 @@
     <ClInclude Include="ParticleEmitter.h" />
     <ClInclude Include="Physics\PhysicsSystem.h" />
     <ClInclude Include="Physics\Bodys\PolygonBody.h" />
+    <ClInclude Include="rammy.h" />
     <ClInclude Include="RessourceManager\Manager.h" />
     <ClInclude Include="RessourceManager\Managers\FontManager.h" />
-    <ClInclude Include="rammy.h" />
     <ClInclude Include="RessourceManager\Managers\TextureManager.h" />
     <ClInclude Include="RessourceManager\RessourceManager.h" />
     <ClInclude Include="Spieler.h" />
