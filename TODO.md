@@ -3,6 +3,8 @@
 ###Gameplay:###
 
 * Design and Prototype a few more Enemies
+* Add Monster Spawners
+* Bosses?
 * Add Wave system (tinyxml?)
 * Add Changing Terrain every few waves (tinyxml?)
 * Add Deathscreen instead of crash
