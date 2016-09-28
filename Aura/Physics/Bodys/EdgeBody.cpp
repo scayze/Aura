@@ -16,15 +16,15 @@ EdgeBody::EdgeBody(float x, float y) : Body(x,y)
 
 void EdgeBody::updateAABB()
 {
-	if(pos.x <= pos.x + p2.x) AABB.left = pos.x;
-	else			 AABB.left = pos.x + p2.x;
+	if(pos.x <= pos.x + p2.x) aabb.left = pos.x;
+	else			 aabb.left = pos.x + p2.x;
 
-	if (pos.y <= pos.y + p2.y) AABB.top = pos.y;
-	else			  AABB.top = pos.y + p2.y;
+	if (pos.y <= pos.y + p2.y) aabb.top = pos.y;
+	else			  aabb.top = pos.y + p2.y;
 
 	//Note: 0.0001 because otherwise completely diagonal / horizantal lines would have no height/with
-	AABB.width = std::fabs(p2.x)+ 0.0001;
-	AABB.height = std::fabs(p2.y) + 0.0001;
+	aabb.width = std::fabs(p2.x)+ 0.0001;
+	aabb.height = std::fabs(p2.y) + 0.0001;
 }
 
 bool EdgeBody::testPoint(sf::Vector2f v)

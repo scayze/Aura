@@ -8,10 +8,10 @@ CircleBody::CircleBody() : Body()
 
 void CircleBody::updateAABB()
 {
-	AABB.left = pos.x - radius - 1;
-	AABB.top = pos.y - radius - 1;
-	AABB.width = radius * 2 + 2;
-	AABB.height = AABB.width + 2;
+	aabb.left = pos.x - radius - 1;
+	aabb.top = pos.y - radius - 1;
+	aabb.width = radius * 2 + 2;
+	aabb.height = aabb.width + 2;
 }
 
 bool CircleBody::testPoint(sf::Vector2f v)

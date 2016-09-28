@@ -25,14 +25,17 @@ Spielfeld::Spielfeld(sf::RenderWindow *window)
 	createObject<Drone>(500, 350.f);
 	createObject<Drone>(700, 400);
 	createObject<Drone>(300.f, 200);
+
 	createObject<Drone>(300.f, 350.f);
 	createObject<Drone>(500, 350.f);
 	createObject<Drone>(700, 400);
 	createObject<Drone>(300.f, 200);
+
 	createObject<Drone>(300.f, 350.f);
 	createObject<Drone>(500, 350.f);
 	createObject<Drone>(700, 400);
 	createObject<Drone>(300.f, 200);
+
 
 	//createObject<ParticleEmitter>(250.f,250.f);
 

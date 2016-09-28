@@ -16,7 +16,7 @@ Spieler::Spieler(float x, float y) : Figur(x,y)
 	xp = 0;
 	xpUntilNextLevel = 100;
 
-	maxHealthPoints = 1000;
+	maxHealthPoints = 100000;
 }
 
 void Spieler::init(Spielfeld * spiel)
@@ -206,7 +206,7 @@ int Spieler::getXpNeeded()
 
 void Spieler::dealDamage(int n)
 {
-	if (invincibleTimer <= 0)	aura->setRotspeed(-aura->getRotspeed());
+	//if (invincibleTimer <= 0)	aura->setRotspeed(-aura->getRotspeed());
 	Figur::dealDamage(n);
 
 

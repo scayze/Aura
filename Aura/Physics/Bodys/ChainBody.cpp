@@ -43,18 +43,18 @@ void ChainBody::updateAABB()
 
 	for (int i = 0; i < points.size(); i++)
 	{
-		if (points[i].x < AABB.left) AABB.left = points[i].x;
-		if (points[i].y < AABB.top) AABB.top = points[i].y;
+		if (points[i].x < aabb.left) aabb.left = points[i].x;
+		if (points[i].y < aabb.top) aabb.top = points[i].y;
 
 		if (points[i].x > right) right = points[i].x;
 		if (points[i].y > down) down = points[i].y;
 	}
 
-	AABB.width = right - AABB.left + 2;
-	AABB.height = down - AABB.top + 2;
+	aabb.width = right - aabb.left + 2;
+	aabb.height = down - aabb.top + 2;
 
-	AABB.left = AABB.left + pos.x - 1;
-	AABB.top = AABB.top + pos.y - 1;
+	aabb.left = aabb.left + pos.x - 1;
+	aabb.top = aabb.top + pos.y - 1;
 }
 
 bool ChainBody::testPoint(sf::Vector2f v)

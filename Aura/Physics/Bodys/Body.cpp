@@ -90,9 +90,9 @@ void Body::setOwner(void * o)
 	owner = o;
 }
 
-sf::FloatRect Body::getAABB()
+AABB& Body::getAABB()
 {
-	return AABB;
+	return aabb;
 }
 
 void Body::debugDraw(sf::RenderWindow * rW)

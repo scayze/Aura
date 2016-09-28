@@ -36,6 +36,7 @@ void Aura::collide(WorldObject * object)
 	if (object->getType() == t_gegner)
 	{
 		static_cast<Figur*>(object)->dealDamage(damage);
+		rotspd = -rotspd;
 	}
 }
 

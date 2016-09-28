@@ -13,9 +13,22 @@ enum bodyType
 
 struct AABB
 {
-	sf::Vector2f center;
-	sf::Vector2f topLeft;
-	sf::Vector2f downRight;
+	float left;
+	float top;
+	float width;
+	float height;
+
+	bool intersects(AABB& aabb)
+	{
+		bool result = true;
+
+		result = result && left < aabb.left + aabb.width;
+		result = result && left + width > aabb.left;
+		result = result && top < aabb.top + aabb.height;
+		result = result && height + top > aabb.top;
+
+		return result;
+	}
 };
 
 class Body
@@ -28,7 +41,7 @@ class Body
 		void * owner;
 
 		AABB aabb;
-		sf::FloatRect AABB;
+		//sf::FloatRect aabb;
 
 
 
@@ -45,7 +58,7 @@ class Body
 		virtual bool testPoint(sf::Vector2f v) = 0;
 		
 		virtual void updateAABB() = 0;
-		sf::FloatRect getAABB();
+		AABB& getAABB();
 
 		virtual void debugDraw(sf::RenderWindow * rW);
 
