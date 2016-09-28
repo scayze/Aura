@@ -14,7 +14,7 @@
 
 ###Performance:
 
-* Add custom AABB other than sfml's floatRect
+* ~~Add custom AABB other than sfml's floatRect~~ __(Done)__
 
 ###Code Design:
 
