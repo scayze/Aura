@@ -21,6 +21,7 @@
 
 ###Code Design:
 
+* Update the horricfic animation class
 * RessourceManager templates
 * ~~RessourceManager `loadTexture(sf::Texture, std::string path)`~~ __(Done)__
 * Drone's code made with state variable for diagramms
