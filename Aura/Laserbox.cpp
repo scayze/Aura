@@ -3,7 +3,7 @@
 
 LaserBox::LaserBox(float x, float y) : Gegner(x, y)
 {
-	RessourceManager::loadTexture(texture,"LaserBox.png");
+	Resources::loadTexture(texture,"LaserBox.png");
 	sprite.setScale(1.5, 1.5);
 
 	range = 350;
@@ -29,7 +29,7 @@ void LaserBox::tick()
 	timer--;
 	if (timer == chargeTime)
 	{
-		RessourceManager::loadTexture(texture,"LaserBoxFireing.png");
+		Resources::loadTexture(texture,"LaserBoxFireing.png");
 
 		if (!(Math::vectorSquaredDistance(body->getPos(), spielfeld->getPlayer()->getBody()->getPos()) < range * range))
 		{
@@ -42,7 +42,7 @@ void LaserBox::tick()
 
 		timer = timeBetweenShots;
 		fireLaser();
-		RessourceManager::loadTexture(texture,"LaserBox.png");
+		Resources::loadTexture(texture,"LaserBox.png");
 
 	}
 }

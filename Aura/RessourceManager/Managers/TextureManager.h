@@ -2,27 +2,18 @@
 #define TextureManager_h
 
 #include <SFML/Graphics.hpp>
-#include <list>
+#include "../Manager.h"
 
-struct tRessource
-{
-	sf::Image img;
-	std::string path;
-};
-
-
-class TextureManager
+class TextureManager : public ResourceManager<sf::Image>
 {
 private:
 
-	std::list<tRessource*> data;
-
-	tRessource& load(std::string dPath);
-	bool unload(std::string dPath);
+	sf::Image& load(std::string dPath);
 
 public:
-	const sf::Image& get(std::string dPath);
 };
+
+
 
 
 

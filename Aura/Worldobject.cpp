@@ -5,7 +5,7 @@
 
 WorldObject::WorldObject(float x, float y)
 {
-	RessourceManager::loadTexture(texture,"bla.png");
+	Resources::loadTexture(texture,"bla.png");
 
 	type = t_noCollide;
 

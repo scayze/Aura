@@ -92,7 +92,7 @@
     <ClCompile Include="RessourceManager\Managers\FontManager.cpp" />
     <ClCompile Include="rammy.cpp" />
     <ClCompile Include="RessourceManager\Managers\TextureManager.cpp" />
-    <ClCompile Include="RessourceManager\RessourceManager.cpp" />
+    <ClCompile Include="RessourceManager\Resources.cpp" />
     <ClCompile Include="Spieler.cpp" />
     <ClCompile Include="Spielfeld.cpp" />
     <ClCompile Include="Steuerung.cpp" />
@@ -126,7 +126,8 @@
     <ClInclude Include="RessourceManager\Manager.h" />
     <ClInclude Include="RessourceManager\Managers\FontManager.h" />
     <ClInclude Include="RessourceManager\Managers\TextureManager.h" />
-    <ClInclude Include="RessourceManager\RessourceManager.h" />
+    <ClInclude Include="RessourceManager\Resource.h" />
+    <ClInclude Include="RessourceManager\Resources.h" />
     <ClInclude Include="Spieler.h" />
     <ClInclude Include="spielfeld.h" />
     <ClInclude Include="Steuerung.h" />

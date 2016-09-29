@@ -19,7 +19,7 @@ XpBar::XpBar()
 	//textfont.lo(RessourceManager::getTexture("Ressources/fonts/emulogic.ttf");
 
 	//hp.setCharacterSize(20);
-	xp.setFont(RessourceManager::getFont("Ressources/fonts/emulogic.ttf"));
+	xp.setFont(Resources::getFont("Ressources/fonts/emulogic.ttf"));
 	xp.setCharacterSize(9);
 	xp.setColor(sf::Color(5, 5, 250));
 	xp.setPosition(backGround.getPosition().x + backGround.getSize().x / 2, backGround.getPosition().y + backGround.getSize().y / 2 - 1);

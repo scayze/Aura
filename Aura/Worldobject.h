@@ -6,7 +6,7 @@
 #include "Physics/Bodys/CircleBody.h"
 #include "Physics/Bodys/PolygonBody.h"
 #include "math.h"
-#include "RessourceManager\RessourceManager.h"
+#include "RessourceManager\Resources.h"
 #include "tweeny\tweeny.h"
 
 enum type

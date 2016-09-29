@@ -4,7 +4,7 @@
 
 Drone::Drone(float x, float y) : Gegner(x, y)
 {
-	RessourceManager::loadTexture(texture, "Drone.png");
+	Resources::loadTexture(texture, "Drone.png");
 
 	maxHealthPoints = 20;
 	moveTime = 0;

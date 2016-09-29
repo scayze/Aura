@@ -1,30 +1,19 @@
-#ifndef FontManager_h
-#define FontManager_h
+#ifndef FontManager_H
+#define FontManager_H
 
 #include <SFML/Graphics.hpp>
-#include <list>
+#include "../Manager.h"
 
-
-struct fRessource
+class FontManager : public ResourceManager<sf::Font>
 {
-	sf::Font font;
-	std::string path;
-};
-
-class FontManager
-{
-
-
 private:
 
-	std::list<fRessource*> data;
-
-	fRessource& load(std::string dPath);
-	bool unload(std::string dPath);
+	sf::Font& load(std::string dPath);
 
 public:
-	const sf::Font& get(std::string dPath);
 };
+
+
 
 
 

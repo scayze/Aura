@@ -4,7 +4,7 @@
 
 Rammy::Rammy(float x, float y) : Gegner(x, y)
 {
-	RessourceManager::loadTexture(texture, "Rammy.png");
+	Resources::loadTexture(texture, "Rammy.png");
 
 	maxHealthPoints = 15;
 

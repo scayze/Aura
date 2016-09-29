@@ -146,13 +146,13 @@
     <ClCompile Include="GUI\windows\window.cpp">
       <Filter>Headerdateien\GUI</Filter>
     </ClCompile>
-    <ClCompile Include="RessourceManager\RessourceManager.cpp" />
     <ClCompile Include="RessourceManager\Manager.cpp" />
     <ClCompile Include="RessourceManager\Managers\TextureManager.cpp" />
     <ClCompile Include="RessourceManager\Managers\FontManager.cpp" />
     <ClCompile Include="rammy.cpp">
       <Filter>Headerdateien\Objeckte\Figuren\Gegner\Rammy</Filter>
     </ClCompile>
+    <ClCompile Include="RessourceManager\Resources.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="math.h">
@@ -236,9 +236,6 @@
     <ClInclude Include="GUI\windows\window.h">
       <Filter>Headerdateien\GUI</Filter>
     </ClInclude>
-    <ClInclude Include="RessourceManager\RessourceManager.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="RessourceManager\Manager.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
@@ -249,6 +246,12 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="rammy.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="RessourceManager\Resource.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="RessourceManager\Resources.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

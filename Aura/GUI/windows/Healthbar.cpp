@@ -17,7 +17,7 @@ HealthBar::HealthBar()
 	diffBar.setFillColor(sf::Color(100, 20, 20));
 
 	//hp.setCharacterSize(20);
-	hp.setFont(RessourceManager::getFont("Ressources/fonts/emulogic.ttf"));
+	hp.setFont(Resources::getFont("Ressources/fonts/emulogic.ttf"));
 	hp.setCharacterSize(16);
 	hp.setColor(sf::Color(5, 80, 5));
 	hp.setPosition(backGround.getSize().x / 2, backGround.getSize().y / 2 + 2);

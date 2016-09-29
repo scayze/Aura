@@ -1,12 +1,13 @@
-#ifndef RessourceManager_H
-#define RessourceManager_H
+#ifndef Resources_H
+#define Resources_H
 
 #include "Managers\TextureManager.h"
 #include "Managers\FontManager.h"
 
-class RessourceManager
+class Resources
 {
 private:
+
 
 
 public:
