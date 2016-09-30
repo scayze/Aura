@@ -11,6 +11,7 @@ class Aura : public WorldObject
 		int damage = 5;
 
 
+
 	public:
 		Aura(float x, float y);
 
