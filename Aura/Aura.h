@@ -15,7 +15,6 @@ class Aura : public WorldObject
 	public:
 		Aura(float x, float y);
 
-
 		void collide(WorldObject * object);
 		void init(Spielfeld * spiel);
 		void tick();
