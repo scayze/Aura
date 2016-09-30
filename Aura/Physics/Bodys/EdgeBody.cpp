@@ -36,16 +36,15 @@ bool EdgeBody::rayCast(sf::Vector2f position, sf::Vector2f dir)
 {
 
 	sf::Vector2f v1 = position - pos;
-	sf::Vector2f v2 = p2 - pos;
+	sf::Vector2f v2 = p2;
 	sf::Vector2f v3 = sf::Vector2f(-dir.y, dir.x);
 
 	float dot = Math::vectorDot(v2, v3);
-	if (std::fabs(dot) < 0.000001) return false;
 
 	float t1 = Math::vectorCross(v2, v1) / dot;
 	float t2 = Math::vectorDot(v1, v3) / dot;
 
-	if (t1 >= 0.0 && (t2 >= 0.0 && t2 <= 1.0))
+	if (t1 >= 0.f && (t2 >= 0.f && t2 <= 1.f))
 		return true;// t1;
 
 	return false;
