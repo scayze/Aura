@@ -1,8 +1,8 @@
-#include "rammy.h"
+#include "Goat.h"
 #include "Spieler.h"
 #include <iostream>
 
-Rammy::Rammy(float x, float y) : Gegner(x, y)
+Goat::Goat(float x, float y) : Gegner(x, y)
 {
 	Resources::loadTexture(texture, "Rammy.png");
 
@@ -12,14 +12,14 @@ Rammy::Rammy(float x, float y) : Gegner(x, y)
 	cooldown = 0;
 
 	speed = 3.f;
-	normalSpeed = 4.5f;
-	ramSpeed = 12.f;
+	normalSpeed = 4.f;
+	ramSpeed = 10.f;
 	ramActivationRange = 300.f;
 
 	static_cast<CircleBody*>(body)->setRadius(9);
 }
 
-void Rammy::tick()
+void Goat::tick()
 {
 	Gegner::tick();
 	//body->setVel(vel);
@@ -43,12 +43,12 @@ void Rammy::tick()
 	else if (state == 2)
 	{
 		body->setVel(ramDir * ramSpeed);
-		if (cooldown < cooldownTime - 50) state = 0;
+		if (cooldown < cooldownTime - 40) state = 0;
 	}
 
 }
 
-void Rammy::init(Spielfeld * s)
+void Goat::init(Spielfeld * s)
 {
 	Gegner::init(s);
 	sprite.setScale(1.5, 1.5);
