@@ -84,7 +84,6 @@
     <ClCompile Include="Laser.cpp" />
     <ClCompile Include="Laserbox.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="math.cpp" />
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="ParticleEmitter.cpp" />
     <ClCompile Include="Physics\PhysicsSystem.cpp" />

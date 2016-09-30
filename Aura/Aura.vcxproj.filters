@@ -62,9 +62,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="math.cpp">
-      <Filter>Headerdateien\Collision\Math</Filter>
-    </ClCompile>
     <ClCompile Include="Laser.cpp">
       <Filter>Headerdateien\Objeckte\Figuren\Gegner\LaserLegerOderSo</Filter>
     </ClCompile>
