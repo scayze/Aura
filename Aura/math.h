@@ -15,6 +15,7 @@ public:
 	static inline float vectorDistance(sf::Vector2f v1, sf::Vector2f v2);
 	static inline float vectorSquaredDistance(sf::Vector2f v1, sf::Vector2f v2);
 	static inline sf::Vector2f vectorSetMagnitude(sf::Vector2f, float magnitude);
+	static inline float vectorCross(sf::Vector2f v1, sf::Vector2f v2);
 	static inline float vectorDot(sf::Vector2f v1, sf::Vector2f v2);
 	static inline float vectorProjectOn(sf::Vector2f v1, sf::Vector2f axis);
 	static inline sf::Vector2f vectorRotateAroundPoint(sf::Vector2f p, sf::Vector2f pivot, float angle);
@@ -68,6 +69,13 @@ float Math::vectorDot(sf::Vector2f v1, sf::Vector2f v2)
 {
 	return v1.x * v2.x + v1.y * v2.y;
 }
+
+//Cross Product of two vectors
+float Math::vectorCross(sf::Vector2f v1, sf::Vector2f v2)
+{
+	return v1.x * v2.y - v1.y * v2.x;
+}
+
 
 //Project a Vector on an axis and return the length of the projected vector
 float Math::vectorProjectOn(sf::Vector2f v, sf::Vector2f axis)
