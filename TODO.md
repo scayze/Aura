@@ -22,6 +22,11 @@
 ###Code Features/Design:
 
 * Add Raycasting
+  * ~~Core~~ __(Done)__
+  * ~~CircleBody~~ __(Done)__
+  * PolygonBody
+  * ~~EdgeBody~~ __(Done)__
+  * ChainBody
 * Update the __BEAUTIFULL__ animation class
 * ~~RessourceManager templates~~ __(Done)__
 * ~~RessourceManager `loadTexture(sf::Texture, std::string path)`~~ __(Done)__
