@@ -484,14 +484,14 @@ bool PhysicsSystem::LineIntersect(sf::Vector2f p0, sf::Vector2f p1, sf::Vector2f
 std::vector<Body*> PhysicsSystem::rayCast(sf::Vector2f pos, sf::Vector2f dir, bodyType bt, type wt)
 {
 	std::vector<Body*> b;
-
+	sf::Vector2f direction(Math::vectorNormalize(dir));
 	for (unsigned int i = 0; i < bodys.size(); i++)
 	{
 		if (bt == -1 || bodys[i]->getType() == bt)
 		{
 			if (wt== -1)
 			{
-				if (bodys[i]->rayCast(pos, dir))
+				if (bodys[i]->rayCast(pos, direction))
 				{
 					b.push_back(bodys[i]);
 				}
@@ -500,7 +500,7 @@ std::vector<Body*> PhysicsSystem::rayCast(sf::Vector2f pos, sf::Vector2f dir, bo
 			{
 				if (static_cast<WorldObject*>(bodys[i]->getOwner())->getType() == wt)
 				{
-					if (bodys[i]->rayCast(pos, dir))
+					if (bodys[i]->rayCast(pos, direction))
 					{
 						b.push_back(bodys[i]);
 					}
