@@ -1,6 +1,5 @@
 #include "PhysicsSystem.h"
 #include "../Worldobject.h"
-#include "math.h"
 #include <iostream>
 
 void PhysicsSystem::addBody(Body * b)
@@ -480,4 +479,36 @@ bool PhysicsSystem::LineIntersect(sf::Vector2f p0, sf::Vector2f p1, sf::Vector2f
 	}
 
 	return false;
+}
+
+std::vector<Body*> PhysicsSystem::rayCast(sf::Vector2f pos, sf::Vector2f dir, bodyType bt, type wt)
+{
+	std::vector<Body*> b;
+
+	for (unsigned int i = 0; i < bodys.size(); i++)
+	{
+		if (bt == -1 || bodys[i]->getType() == bt)
+		{
+			if (wt== -1)
+			{
+				if (bodys[i]->rayCast(pos, dir))
+				{
+					b.push_back(bodys[i]);
+				}
+			}
+			else if (bodys[i]->getOwner() != 0)
+			{
+				if (static_cast<WorldObject*>(bodys[i]->getOwner())->getType() == wt)
+				{
+					if (bodys[i]->rayCast(pos, dir))
+					{
+						b.push_back(bodys[i]);
+					}
+				}
+			}
+		}
+
+	}
+
+	return b;
 }

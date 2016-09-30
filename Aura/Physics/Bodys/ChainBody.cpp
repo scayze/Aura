@@ -61,3 +61,8 @@ bool ChainBody::testPoint(sf::Vector2f v)
 {
 	return false;
 }
+
+bool ChainBody::rayCast(sf::Vector2f pos, sf::Vector2f dir)
+{
+	return false;
+}

@@ -139,7 +139,7 @@ void Spielfeld::render()
 		}
 	}
 
-	pSystem.debugRender(rWindow);
+	//pSystem.debugRender(rWindow);
 	guiSystem.render(rWindow);
 
 
@@ -148,6 +148,11 @@ void Spielfeld::render()
 Spieler * Spielfeld::getPlayer()
 {
 	return player;
+}
+
+PhysicsSystem * Spielfeld::getPhysicsSystem()
+{
+	return &pSystem;
 }
 
 sf::RenderTexture * Spielfeld::getBackgroundTexture()

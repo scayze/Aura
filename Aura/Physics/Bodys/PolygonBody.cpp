@@ -64,6 +64,11 @@ bool PolygonBody::testPoint(sf::Vector2f v)
 	return false;
 }
 
+bool PolygonBody::rayCast(sf::Vector2f pos, sf::Vector2f dir)
+{
+	return false;
+}
+
 void PolygonBody::updateCenterOfMass()
 {
 

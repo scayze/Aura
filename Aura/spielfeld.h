@@ -33,6 +33,7 @@ class Spielfeld
 		void tick();
 		void render();
 		Spieler * getPlayer();
+		PhysicsSystem * getPhysicsSystem();
 		sf::RenderTexture * getBackgroundTexture();
 		void updateBackground();
 

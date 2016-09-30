@@ -29,6 +29,11 @@ void Spieler::init(Spielfeld * spiel)
 
 void Spieler::tick()
 {
+	//std::vector<Body*> b = spielfeld->getPhysicsSystem()->rayCast(body->getPos(), sf::Vector2f(1, 0), Circle);
+	//for (unsigned int i = 0; i < b.size(); i++)
+	//{
+	//	b[i]->setPos(10, 10);
+	//}
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
     {
         if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Left))

@@ -153,6 +153,7 @@
       <Filter>Headerdateien\Objeckte\Figuren\Gegner\Rammy</Filter>
     </ClCompile>
     <ClCompile Include="RessourceManager\Resources.cpp" />
+    <ClCompile Include="Goat.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="math.h">
@@ -252,6 +253,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="RessourceManager\Resources.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Goat.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

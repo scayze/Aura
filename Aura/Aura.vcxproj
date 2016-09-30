@@ -70,6 +70,7 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Aura.cpp" />
+    <ClCompile Include="Goat.cpp" />
     <ClCompile Include="Physics\Bodys\Body.cpp" />
     <ClCompile Include="Buff.cpp" />
     <ClCompile Include="Physics\Bodys\ChainBody.cpp" />
@@ -105,6 +106,7 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Aura.h" />
+    <ClInclude Include="Goat.h" />
     <ClInclude Include="Physics\Bodys\Body.h" />
     <ClInclude Include="Buff.h" />
     <ClInclude Include="Physics\Bodys\ChainBody.h" />

@@ -32,6 +32,11 @@ bool EdgeBody::testPoint(sf::Vector2f v)
 	return false;
 }
 
+bool EdgeBody::rayCast(sf::Vector2f pos, sf::Vector2f dir)
+{
+	return false;
+}
+
 void EdgeBody::setP2(sf::Vector2f point2)
 {
 	p2 = point2;
