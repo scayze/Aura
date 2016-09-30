@@ -19,8 +19,9 @@
 
 * ~~Add custom AABB other than sfml's floatRect~~ __(Done)__
 
-###Code Design:
+###Code Features/Design:
 
+* Add Raycasting
 * Update the __BEAUTIFULL__ animation class
 * ~~RessourceManager templates~~ __(Done)__
 * ~~RessourceManager `loadTexture(sf::Texture, std::string path)`~~ __(Done)__
