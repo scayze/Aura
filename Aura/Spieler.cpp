@@ -5,10 +5,11 @@
 
 Spieler::Spieler(float x, float y) : Figur(x,y)
 {
-	type = t_spieler;
+
 	Resources::loadTexture(texture,"Player.png");
 	animation = Animation(&sprite,6,4);
 	sprite.setTextureRect(sf::IntRect(0,0,32,48));
+	body->setCollisionType(t_spieler);
 	speed = 5;
 
 	//leveling
@@ -29,10 +30,10 @@ void Spieler::init(Spielfeld * spiel)
 
 void Spieler::tick()
 {
-	//std::vector<Body*> b = spielfeld->getPhysicsSystem()->rayCast(body->getPos(), sf::Vector2f(1, 0), Circle);
+	//std::vector<Body*> b = spielfeld->getPhysicsSystem()->rayCast(body->getPos(),sf::Vector2f(1, 1), Edge);
 	//for (unsigned int i = 0; i < b.size(); i++)
 	//{
-	//	b[i]->setPos(10, 10);
+	//	b[i]->setPos(b[i]->getPos() - sf::Vector2f(1,1));
 	//}
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
     {

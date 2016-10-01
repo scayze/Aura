@@ -14,6 +14,9 @@ class PhysicsSystem
 
 private:
 	std::deque<Body*> bodys;
+	sf::Clock tic;
+	sf::Clock col;
+	int t;
 
 
 public:

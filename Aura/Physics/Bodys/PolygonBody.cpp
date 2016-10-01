@@ -2,7 +2,7 @@
 
 PolygonBody::PolygonBody() : Body()
 {
-	type = Polygon;
+	bodyType = Polygon;
 	isStatic = true;
 }
 

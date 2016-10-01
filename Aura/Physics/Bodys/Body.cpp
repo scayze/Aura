@@ -6,7 +6,7 @@ Body::Body()
 	pos.x = 0;
 	pos.y = 0;
 	mass = 10;
-	type = Circle;
+	bodyType = Circle;
 	isStatic = false;
 	owner = 0;
 }
@@ -16,7 +16,7 @@ Body::Body(float xpos,float ypos)
 	pos.x = xpos;
 	pos.y = ypos;
 	mass = 10;
-	type = Circle;
+	bodyType = Circle;
 }
 
 void Body::tick()
@@ -29,7 +29,7 @@ void Body::tick()
 
 int Body::getType()
 {
-	return type;
+	return bodyType;
 }
 
 //Dimensions get & sets
@@ -53,14 +53,14 @@ void Body::setPos(float x, float y)
 {
 	pos.x = x;
 	pos.y = y;
-	updateAABB();
+	//updateAABB();
 }
 
 void Body::setPos(sf::Vector2f vec)
 {
 	pos.x = vec.x;
 	pos.y = vec.y;
-	updateAABB();
+	//updateAABB();
 }
 
 //Velocity get & sets
@@ -107,4 +107,27 @@ void Body::debugDraw(sf::RenderWindow * rW)
 	//rec.setSize(sf::Vector2f(AABB.width, AABB.height));
 
 	//rW->draw(rec);
+}
+
+std::bitset<8> Body::getCollisionType()
+{
+	return collisionType;
+}
+void Body::setCollisionType(std::bitset<8> byte)
+{
+	collisionType = byte;
+}
+
+std::bitset<8> Body::getCollisionWith()
+{
+	return collisionWith;
+}
+void Body::setCollisionWith(std::bitset<8> byte)
+{
+	collisionWith = byte;
+}
+
+void Body::addCollisionWith(std::bitset<8> byte)
+{
+	collisionWith = collisionWith | byte;
 }

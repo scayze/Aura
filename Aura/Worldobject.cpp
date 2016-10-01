@@ -7,8 +7,6 @@ WorldObject::WorldObject(float x, float y)
 {
 	Resources::loadTexture(texture,"bla.png");
 
-	type = t_noCollide;
-
 	body = new CircleBody();
 
 	body->setPos(x,y);
@@ -29,7 +27,7 @@ void WorldObject::init(Spielfeld * spiel)
 
 void WorldObject::tick()
 {
-	if(!body->isStatic) body->tick();
+
 	//sprite.setPosition(body->getPos());
 }
 
@@ -48,9 +46,9 @@ Body * WorldObject::getBody()
 	return body;
 }
 
-int WorldObject::getType()
+std::bitset<8> WorldObject::getType()
 {
-	return type;
+	return body->getCollisionType();
 }
 
 WorldObject::~WorldObject()

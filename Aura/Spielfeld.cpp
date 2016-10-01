@@ -21,24 +21,16 @@ Spielfeld::Spielfeld(sf::RenderWindow *window)
 
 	//Objects
 	player = createObject<Spieler>(30, 30);
-	createObject<Rammy>(300.f, 350.f);
-	createObject<Rammy>(500, 350.f);
-	createObject<Rammy>(700, 400);
-	createObject<Rammy>(300.f, 200);
+	//createObject<Rammy>(300.f, 350.f);
+	//createObject<Rammy>(500, 350.f);
+	//createObject<Rammy>(700, 400);
+	//createObject<Rammy>(300.f, 200);
 
-	createObject<Rammy>(300.f, 350.f);
-	createObject<Rammy>(500, 350.f);
-	createObject<Rammy>(700, 400);
-	createObject<Rammy>(300.f, 200);
-	createObject<Rammy>(300.f, 350.f);
-	createObject<Rammy>(500, 350.f);
-	createObject<Rammy>(700, 400);
-	createObject<Rammy>(300.f, 200);
-
-
-	//createObject<Drone>(500, 350.f);
-	//createObject<Drone>(700, 400);
-	//createObject<Drone>(300.f, 200);
+	for (int i = 0; i < 40; i++)
+	{
+		createObject<Rammy>(300.f + i*10, 200+ i * 5);
+	}
+	
 
 
 	//createObject<ParticleEmitter>(250.f,250.f);
@@ -65,6 +57,10 @@ Spielfeld::Spielfeld(sf::RenderWindow *window)
 	p2_p3->setMass(1);
 	p3_p4->setMass(1);
 	p4_p1->setMass(1);
+	p1_p2->setCollisionType(t_terrain);
+	p2_p3->setCollisionType(t_terrain);
+	p3_p4->setCollisionType(t_terrain);
+	p4_p1->setCollisionType(t_terrain);
 
 	p1_p2->setPos(0, 0);
 	p1_p2->setP2(sf::Vector2f(window->getSize().x, 0));
@@ -139,7 +135,7 @@ void Spielfeld::render()
 		}
 	}
 
-	//pSystem.debugRender(rWindow);
+	pSystem.debugRender(rWindow);
 	guiSystem.render(rWindow);
 
 

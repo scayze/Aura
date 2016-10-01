@@ -2,7 +2,6 @@
 
 Particle::Particle(float x, float y) : WorldObject(x,y)
 {
-    type = t_noCollide;
 	flag_visible = false;
 }
 

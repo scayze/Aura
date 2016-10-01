@@ -3,12 +3,13 @@
 
 Aura::Aura(float x, float y) : WorldObject(x,y)
 {
-    type = t_aura;
+
 	Resources::loadTexture(texture,"Sword.png");
     rotspd = 8;
 
 	delete body;
 	body = new EdgeBody();
+	body->setCollisionType(t_aura);
 	body->setPos(x, y);
 	body->setMass(-1);
 

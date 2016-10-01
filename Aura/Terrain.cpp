@@ -4,14 +4,11 @@
 Terrain::Terrain(float x, float y) : WorldObject(x,y)
 {
 
-	//terrain type
-	type = t_terrain;
-
 	//Change Body type to a Chain
 	delete body; 
 	body = new ChainBody();
 	body->setPos(x, y);
-
+	body->setCollisionType(t_terrain);
 	body->setMass(10);
 
 	//Non movable

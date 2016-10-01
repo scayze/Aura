@@ -6,6 +6,7 @@ Figur::Figur(float x, float y) : WorldObject(x, y)
 	maxHealthPoints = 25;
 
 	xpDrop = 25;
+	body->setCollisionWith(t_terrain);
 }
 
 void Figur::init(Spielfeld * s)
