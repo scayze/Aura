@@ -3,12 +3,14 @@
 
 Aura::Aura(float x, float y) : WorldObject(x,y)
 {
-    type = t_aura;
+
 	Resources::loadTexture(texture,"Sword.png");
     rotspd = 8;
 
 	delete body;
 	body = new EdgeBody();
+	body->setCollisionType(t_aura);
+	body->addCollisionWith(t_gegner);
 	body->setPos(x, y);
 	body->setMass(-1);
 
@@ -33,6 +35,7 @@ void Aura::tick()
 
 void Aura::collide(WorldObject * object)
 {
+
 	if (object->getType() == t_gegner)
 	{
 		static_cast<Figur*>(object)->dealDamage(damage);

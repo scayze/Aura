@@ -2,7 +2,7 @@
 
 CircleBody::CircleBody() : Body()
 {
-	type = Circle;
+	bodyType = Circle;
 	radius = 20;
 }
 

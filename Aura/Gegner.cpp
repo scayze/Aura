@@ -2,7 +2,8 @@
 #include <iostream>
 Gegner::Gegner(float x, float y) : Figur(x,y)
 {
-	type = t_gegner;
+	body->setCollisionType(t_gegner);
+	body->addCollisionWith(t_spieler | t_gegner);
 
     speed = 8;
 	body->setMass(10);

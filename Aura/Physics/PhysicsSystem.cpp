@@ -20,6 +20,7 @@ void PhysicsSystem::debugRender(sf::RenderWindow * rW)
 
 void PhysicsSystem::tick()
 {
+	t = 0;
 	for (unsigned int i = 0; i < bodys.size(); i++)
 	{
 		if (bodys[i]->flagDestroy)
@@ -27,6 +28,11 @@ void PhysicsSystem::tick()
 			delete bodys[i];
 			bodys.erase(bodys.begin() + i);
 		}
+	}
+
+	for (unsigned int i = 0; i < bodys.size(); i++)
+	{
+		if (!bodys[i]->isStatic) bodys[i]->tick();
 	}
 
 
@@ -49,17 +55,22 @@ void PhysicsSystem::tick()
 				sf::Vector2f pushVector;
 
 				//Wenn beide Körper Kreise sind
-				if ( (bodys[i]->getType() ^ bodys[j]->getType()) == (Circle ^ Circle))
+				if(bodys[i]->getType() == Circle && bodys[j]->getType() == Circle)
+				//if ( (bodys[i]->getType() ^ bodys[j]->getType()) == (Circle ^ Circle))
 				{
 					//Setze pushvektor
+
 					pushVector = circleCollide((CircleBody*)bodys[i], (CircleBody*)bodys[j]);
+
 					//Wenn pushvektor nicht Null ist, dann lasse sie kollidieren
 					if (! (pushVector.x == NULL && pushVector.y == NULL)) collide(bodys[i], bodys[j], pushVector);
 				}
 
 				//Wenn ein Körper Kreis und der andere eine Linie ist
-				if ((bodys[i]->getType() ^ bodys[j]->getType()) == (Circle ^ Edge))
+				else if (bodys[i]->getType() == Circle && bodys[j]->getType() == Edge || bodys[i]->getType() == Edge && bodys[j]->getType() == Circle)
+				//else if ((bodys[i]->getType() ^ bodys[j]->getType()) == (Circle ^ Edge))
 				{
+
 					if (bodys[i]->getType() == Circle) pushVector = circleEdgeCollide((CircleBody*)bodys[i], (EdgeBody*)bodys[j]);
 					else							   pushVector = circleEdgeCollide((CircleBody*)bodys[j], (EdgeBody*)bodys[i]);
 
@@ -71,7 +82,8 @@ void PhysicsSystem::tick()
 				}
 
 				//Wenn ein Körper Kreis und der andere ein Polygon ist
-				if ( (bodys[i]->getType() ^ bodys[j]->getType()) == (Circle ^ Polygon))
+				else if (bodys[i]->getType() == Circle && bodys[j]->getType() == Polygon || bodys[i]->getType() == Polygon && bodys[j]->getType() == Circle)
+				//else if ( (bodys[i]->getType() ^ bodys[j]->getType()) == (Circle ^ Polygon))
 				{
 					if(bodys[i]->getType() == Circle) pushVector = circlePolygonCollide((CircleBody*)bodys[i], (PolygonBody*)bodys[j]);
 					else							  pushVector = circlePolygonCollide((CircleBody*)bodys[j], (PolygonBody*)bodys[i]);
@@ -84,7 +96,8 @@ void PhysicsSystem::tick()
 				}
 
 				//Wenn ein Körper Kreis und der andere eine Chain ist
-				if ((bodys[i]->getType() ^ bodys[j]->getType()) == (Circle ^ Chain))
+				else if (bodys[i]->getType() == Circle && bodys[j]->getType() == Chain || bodys[i]->getType() == Chain && bodys[j]->getType() == Circle)
+				//else if ((bodys[i]->getType() ^ bodys[j]->getType()) == (Circle ^ Chain))
 				{
 					if (bodys[i]->getType() == Circle) pushVector = circleChainCollide((CircleBody*)bodys[i], (ChainBody*)bodys[j]);
 					else							   pushVector = circleChainCollide((CircleBody*)bodys[j], (ChainBody*)bodys[i]);
@@ -98,18 +111,22 @@ void PhysicsSystem::tick()
 			}
 		}
 	}
+	//std::cout << "Collision: " << t << std::endl;// col.getElapsedTime().asMicroseconds() << std::endl;
 }
 
 void PhysicsSystem::collide(Body * b1, Body * b2, sf::Vector2f pushVector)
 {
 	//Let the Objects know they are colliding
+	//WorldObject * w1 = reinterpret_cast<WorldObject*>(b1->getOwner());
+	//WorldObject * w2 = reinterpret_cast<WorldObject*>(b2->getOwner());
 	WorldObject * w1 = static_cast<WorldObject*>(b1->getOwner());
 	WorldObject * w2 = static_cast<WorldObject*>(b2->getOwner());
 	
 	if (w1 && w2)
 	{
-		w1->collide(static_cast<WorldObject*>(b2->getOwner()));
-		w2->collide(static_cast<WorldObject*>(b1->getOwner()));
+
+		w1->collide(static_cast<WorldObject*>(b1->getOwner()));
+		w2->collide(static_cast<WorldObject*>(b2->getOwner()));
 	}
 
 	if (b1->getMass() < 0 || b2->getMass() < 0) return;
@@ -145,30 +162,8 @@ void PhysicsSystem::collide(Body * b1, Body * b2, sf::Vector2f pushVector)
 
 bool PhysicsSystem::doCollide(Body * b1, Body *b2)
 {
-	WorldObject * w1 = static_cast<WorldObject*>(b1->getOwner());
-	WorldObject * w2 = static_cast<WorldObject*>(b2->getOwner());
 
-	int type1;
-	int type2;
-
-	if (w1) type1 = w1->getType();
-	else type1 = t_terrain;
-
-	if (w2) type2 = w2->getType();
-	else type2 = t_terrain;
-
-
-	if ((type1 == t_spieler && type2 == t_gegner) || (type1 == t_gegner && type2 == t_spieler)) return true;
-	if ((type1 == t_gegner && type2 == t_aura) || (type1 == t_aura && type2 == t_gegner)) return true;
-	if ((type1 == t_gegner && type2 == t_terrain) || (type1 == t_terrain && type2 == t_gegner)) return true;
-	if ((type1 == t_spieler && type2 == t_terrain) || (type1 == t_terrain && type2 == t_spieler)) return true;
-	if ((type1 == t_spieler && type2 == t_playerOnly) || (type1 == t_playerOnly && type2 == t_spieler)) return true;
-
-	//if ((type1 ^ type2) == (t_gegner ^ t_spieler)) return true;
-	//if ((type1 ^ type2) == (t_terrain ^ t_spieler)) return true;
-	//if ((type1 ^ type2) == (t_terrain ^ t_gegner)) return true;
-
-
+	if ((b1->getCollisionType() & b2->getCollisionWith() | b1->getCollisionWith() & b2->getCollisionType()) != 0b0000000) return true;
 	return false;
 }
 
@@ -183,19 +178,19 @@ sf::Vector2f PhysicsSystem::circleCollide(CircleBody* b1, CircleBody* b2)
 	float dist = xdist*xdist + ydist*ydist;
 	//Return true if the sum of the radians squared is smaller than the distance between the objects squared
 	float sumradius = b1->getRadius() + b2->getRadius();
-	if (!(sumradius*sumradius > dist)) return sf::Vector2f(NULL,NULL);
+	if (sumradius*sumradius < dist) return sf::Vector2f(NULL,NULL);
 
 	//Der Vektor um die die Objecte von einander entfernt werden müssen um nicht mehr zu kollidiern
 	sf::Vector2f pushVector;
 
-	pushVector.x = b1->getPos().x - b2->getPos().x;
-	pushVector.y = b1->getPos().y - b2->getPos().y;
+	pushVector.x = xdist;
+	pushVector.y = ydist;
 
 	//Errechne distanz
 	float distance = Math::vectorDistance(b1->getPos(), b2->getPos());
 
 	//Errechne die entfernung mit der sich die kreise überlappen
-	float insideDistance = b1->getRadius() + b2->getRadius() - distance;
+	float insideDistance = sumradius - distance;
 
 	//Errechne pushVektor
 	pushVector.x = pushVector.x / distance * insideDistance;
@@ -206,6 +201,7 @@ sf::Vector2f PhysicsSystem::circleCollide(CircleBody* b1, CircleBody* b2)
 
 sf::Vector2f PhysicsSystem::circleEdgeCollide(CircleBody * circle, EdgeBody * edge)
 {
+
 	sf::Vector2f p1(edge->getPos());
 	sf::Vector2f p2(p1 + edge->getP2());
 	sf::Vector2f p3(circle->getPos());
@@ -489,21 +485,11 @@ std::vector<Body*> PhysicsSystem::rayCast(sf::Vector2f pos, sf::Vector2f dir, bo
 	{
 		if (bt == -1 || bodys[i]->getType() == bt)
 		{
-			if (wt== -1)
+			if (wt== -1 || bodys[i]->getCollisionType() == wt)
 			{
 				if (bodys[i]->rayCast(pos, direction))
 				{
 					b.push_back(bodys[i]);
-				}
-			}
-			else if (bodys[i]->getOwner() != 0)
-			{
-				if (static_cast<WorldObject*>(bodys[i]->getOwner())->getType() == wt)
-				{
-					if (bodys[i]->rayCast(pos, direction))
-					{
-						b.push_back(bodys[i]);
-					}
 				}
 			}
 		}

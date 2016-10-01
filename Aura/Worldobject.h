@@ -11,20 +11,17 @@
 
 enum type
 {
-
-	t_terrain = 0,
-	t_spieler = 1,
-	t_aura = 2,
-	t_gegner = 3,
-	t_noCollide = 4,
+	t_noCollide =	0b0000000,
+	t_terrain =		0b0000001,
+	t_spieler =		0b0000010,
+	t_aura =		0b0000100,
+	t_gegner =		0b0001000,
 	t_playerOnly = 5
 };
 
 class WorldObject
 {
 	protected:
-
-		int type;
 
 		Spielfeld * spielfeld;
 
@@ -47,7 +44,7 @@ class WorldObject
 
 		sf::Sprite& getSprite();
 		Body * getBody();
-		int getType();
+		std::bitset<8> getType();
 
 		bool flag_destroy;
 		bool flag_visible;

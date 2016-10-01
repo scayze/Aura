@@ -3,6 +3,7 @@
 
 #include <SFML\Graphics.hpp>
 #include "../../math.h"
+#include <bitset>
 
 enum bodyType
 {
@@ -36,7 +37,10 @@ class Body
 {
 	protected:
 
-		int type;
+		int bodyType;
+
+		std::bitset<8> collisionType = 0b0000000;
+		std::bitset<8> collisionWith = 0b0000000;
 
 		int mass;
 		void * owner;
@@ -80,6 +84,14 @@ class Body
 
 		void * getOwner();
 		void setOwner(void * o);
+
+
+		std::bitset<8> getCollisionType();
+		void setCollisionType(std::bitset<8> byte);
+
+		std::bitset<8> getCollisionWith();
+		void setCollisionWith(std::bitset<8> byte);
+		void addCollisionWith(std::bitset<8> byte);
 };
 
 #endif

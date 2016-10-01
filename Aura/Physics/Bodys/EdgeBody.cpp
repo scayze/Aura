@@ -2,14 +2,14 @@
 
 EdgeBody::EdgeBody() : Body()
 {
-	type = Edge;
+	bodyType = Edge;
 	mass = -1;
 	isStatic = true;
 }
 
 EdgeBody::EdgeBody(float x, float y) : Body(x,y)
 {
-	type = Edge;
+	bodyType = Edge;
 	mass = -1;
 	isStatic = true;
 }

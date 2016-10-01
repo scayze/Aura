@@ -7,7 +7,6 @@ Xp::Xp(float x, float y) : WorldObject(x,y)
 	speeeeeed = 6;
 	amount = 1;
 	Resources::loadTexture(texture,"xp.png");
-	type = t_playerOnly;
 	static_cast<CircleBody*>(body)->setRadius(3);
 }
 

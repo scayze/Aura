@@ -2,7 +2,7 @@
 
 ChainBody::ChainBody() : Body()
 {
-	type = Chain;
+	bodyType = Chain;
 	isStatic = true;
 }
 

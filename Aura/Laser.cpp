@@ -3,7 +3,6 @@
 
 Laser::Laser(float x, float y) : WorldObject(x, y)
 {
-	type = t_noCollide;
 	delete body;
 	body = new EdgeBody();
 	body->setPos(x, y);
@@ -26,7 +25,7 @@ void Laser::tick()
 	ticksUntilDamage--;
 	if (ticksUntilDamage == 0)
 	{
-		type = t_gegner;
+		body->setCollisionType(t_gegner);
 	}
 	if (ticksUntilDamage < 0) flag_destroy = true;
 	WorldObject::tick();
