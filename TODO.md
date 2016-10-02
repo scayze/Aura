@@ -22,6 +22,7 @@
 
 ###Code Features/Design:
 
+* Add 'Bounce' Physics
 * Add Raycasting
   * ~~Core~~ __(Done)__
   * ~~CircleBody~~ __(Done)__
