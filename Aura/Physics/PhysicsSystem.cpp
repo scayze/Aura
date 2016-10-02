@@ -482,7 +482,7 @@ std::vector<Body*> PhysicsSystem::rayCast(sf::Vector2f pos, sf::Vector2f dir, bo
 	{
 		if (bt == -1 || bodys[i]->getType() == bt)
 		{
-			if (wt== -1 || bodys[i]->getCollisionType() == wt)
+			if (wt== -1 || ( bodys[i]->getCollisionType() & wt ) > 0)
 			{
 				if (bodys[i]->rayCast(pos, direction))
 				{
