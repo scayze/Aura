@@ -24,7 +24,6 @@ class Spieler : public Figur
 		void init(Spielfeld * spiel);
 		void tick();
 
-		void dealDamage(int n);
 		void collide(WorldObject *obj);
 		void giveXP(int n);
 		int getXP();

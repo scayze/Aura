@@ -25,7 +25,7 @@ void Xp::setAmount(int n)
 
 void Xp::collide(WorldObject * obj)
 {
-	if (obj->getType() == t_spieler)
+	if (obj->getBody()->getCollisionType() == t_spieler)
 	{
 		static_cast<Spieler*>(obj)->giveXP(amount);
 		flag_destroy = true;

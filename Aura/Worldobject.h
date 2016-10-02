@@ -40,7 +40,6 @@ class WorldObject
 
 		sf::Sprite& getSprite();
 		Body * getBody();
-		std::bitset<8> getType();
 
 		bool flag_destroy;
 		bool flag_visible;

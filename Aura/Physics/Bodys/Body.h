@@ -46,9 +46,6 @@ class Body
 		void * owner;
 
 		AABB aabb;
-		//sf::FloatRect aabb;
-
-
 
 		sf::Vector2f pos;
 		sf::Vector2f vel;

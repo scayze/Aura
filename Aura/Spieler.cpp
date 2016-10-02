@@ -9,6 +9,7 @@ Spieler::Spieler(float x, float y) : Figur(x,y)
 	Resources::loadTexture(texture,"Player.png");
 	animation = Animation(&sprite,6,4);
 	sprite.setTextureRect(sf::IntRect(0,0,32,48));
+
 	body->setCollisionType(t_spieler);
 	speed = 5;
 
@@ -17,7 +18,7 @@ Spieler::Spieler(float x, float y) : Figur(x,y)
 	xp = 0;
 	xpUntilNextLevel = 100;
 
-	maxHealthPoints = 100000;
+	maxHealthPoints = 10000;
 }
 
 void Spieler::init(Spielfeld * spiel)
@@ -210,13 +211,6 @@ int Spieler::getXpNeeded()
 	return xpUntilNextLevel;
 }
 
-void Spieler::dealDamage(int n)
-{
-	//if (invincibleTimer <= 0)	aura->setRotspeed(-aura->getRotspeed());
-	Figur::dealDamage(n);
-
-
-}
 
 void Spieler::collide(WorldObject *obj)
 {

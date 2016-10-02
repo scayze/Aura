@@ -100,14 +100,14 @@ AABB& Body::getAABB()
 void Body::debugDraw(sf::RenderWindow * rW)
 {
 
-	sf::RectangleShape rec;
-	rec.setPosition(sf::Vector2f(aabb.left, aabb.top));
-	rec.setOutlineThickness(2);
-	rec.setFillColor(sf::Color::Transparent);
-	rec.setOutlineColor(sf::Color::Yellow);
-	rec.setSize(sf::Vector2f(aabb.width, aabb.height));
+	//sf::RectangleShape rec;
+	//rec.setPosition(sf::Vector2f(aabb.left, aabb.top));
+	//rec.setOutlineThickness(2);
+	//rec.setFillColor(sf::Color::Transparent);
+	//rec.setOutlineColor(sf::Color::Yellow);
+	//rec.setSize(sf::Vector2f(aabb.width, aabb.height));
 
-	rW->draw(rec);
+	//rW->draw(rec);
 }
 
 unsigned char Body::getCollisionType()

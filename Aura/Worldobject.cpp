@@ -28,7 +28,6 @@ void WorldObject::init(Spielfeld * spiel)
 void WorldObject::tick()
 {
 
-	//sprite.setPosition(body->getPos());
 }
 
 void WorldObject::render(sf::RenderWindow * rW)
@@ -44,11 +43,6 @@ sf::Sprite& WorldObject::getSprite()
 Body * WorldObject::getBody()
 {
 	return body;
-}
-
-std::bitset<8> WorldObject::getType()
-{
-	return body->getCollisionType();
 }
 
 WorldObject::~WorldObject()

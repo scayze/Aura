@@ -7,6 +7,7 @@ Laser::Laser(float x, float y) : WorldObject(x, y)
 	body = new EdgeBody();
 	body->setPos(x, y);
 	body->setMass(-1);
+	body->setCollisionWith(t_spieler);
 
 	Resources::loadTexture(texture, "Laser.png");
 	sprite.setScale(350, 1);
@@ -34,8 +35,7 @@ void Laser::tick()
 
 void Laser::collide(WorldObject * object)
 {
-
-	if (object->getType() == t_spieler)
+	if (object->getBody()->getCollisionType() == t_spieler)
 	{
 		static_cast<Figur*>(object)->dealDamage(200);
 	}

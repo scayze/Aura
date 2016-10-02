@@ -21,15 +21,15 @@ Spielfeld::Spielfeld(sf::RenderWindow *window)
 
 	//Objects
 	player = createObject<Spieler>(100, 400);
-	createObject<Drone>(200, 400);
-	//createObject<Rammy>(300.f, 350.f);
-	//createObject<Rammy>(500, 350.f);
-	//createObject<Rammy>(700, 400);
-	//createObject<Rammy>(300.f, 200);
+	//createObject<Drone>(200, 400);
+	createObject<LaserBox>(300.f, 350.f);
+	createObject<LaserBox>(500, 350.f);
+	createObject<LaserBox>(700, 400);
+	createObject<LaserBox>(300.f, 200);
 
-	//for (int i = 0; i < 5; i++)
+	//for (int i = 0; i < 10; i++)
 	//{
-	//	createObject<Rammy>(300.f + i*10, 200+ i * 5);
+	//	createObject<Drone>(300.f + i*10, 200+ i * 5);
 	//}
 	
 
