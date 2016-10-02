@@ -7,14 +7,11 @@ class Aura : public WorldObject
 {
 	private:
 		float rotspd;
-
 		int damage = 5;
-
-
 
 	public:
 		Aura(float x, float y);
-		virtual void collide(WorldObject * object);
+		void collide(WorldObject * object);
 		void init(Spielfeld * spiel);
 		void tick();
 		float getRotspeed();

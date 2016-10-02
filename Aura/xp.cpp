@@ -8,6 +8,7 @@ Xp::Xp(float x, float y) : WorldObject(x,y)
 	amount = 1;
 	Resources::loadTexture(texture,"xp.png");
 	static_cast<CircleBody*>(body)->setRadius(3);
+	body->addCollisionWith(t_spieler);
 }
 
 void Xp::tick()

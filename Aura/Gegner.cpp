@@ -14,18 +14,9 @@ Gegner::Gegner(float x, float y) : Figur(x,y)
 void Gegner :: tick()
 {
     Figur::tick();
-	//body.setVel(-1, 0);
-
-	//std::cout << healthPoints << std::endl;
-
 }
 
 void Gegner::init(Spielfeld * feld)
 {
 	Figur::init(feld);
 }
-
-//void Gegner::collide(WorldObject * object)
-//{
-//
-//}

@@ -10,7 +10,7 @@ Drone::Drone(float x, float y) : Gegner(x, y)
 	moveTime = 0;
 	speed = 3.f;
 	time = 300;
-	laserBoxTimer = time/0.6;
+	laserBoxTimer = time/0.6f;
 
 	destination.x = rand();
 	destination.y = rand();

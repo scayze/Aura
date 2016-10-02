@@ -1,6 +1,6 @@
 #include "Aura.h"
 #include "Figur.h"
-
+#include <iostream>
 Aura::Aura(float x, float y) : WorldObject(x,y)
 {
 
@@ -30,13 +30,13 @@ void Aura::tick()
 	sprite.setRotation(sprite.getRotation()+rotspd);
 	EdgeBody * b = static_cast<EdgeBody*>(body);
 
+	body->updateAABB();
 	b->setP2(Math::vectorRotateAroundPoint(b->getP2(), sf::Vector2f(0,0), rotspd / 180.f * Math::PI()));
 }
 
 void Aura::collide(WorldObject * object)
 {
-
-	if (object->getType() == t_gegner)
+	if (object->getBody()->getCollisionType() == t_gegner)
 	{
 		static_cast<Figur*>(object)->dealDamage(damage);
 		rotspd = -rotspd;
