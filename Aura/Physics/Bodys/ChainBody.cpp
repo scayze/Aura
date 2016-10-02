@@ -62,7 +62,27 @@ bool ChainBody::testPoint(sf::Vector2f v)
 	return false;
 }
 
-bool ChainBody::rayCast(sf::Vector2f pos, sf::Vector2f dir)
+bool ChainBody::rayCast(sf::Vector2f position, sf::Vector2f dir)
 {
+	sf::Vector2f v1;
+	sf::Vector2f v2;
+	sf::Vector2f v3 = sf::Vector2f(-dir.y, dir.x);
+
+
+	for (unsigned int i = 0; i <= points.size(); i++)
+	{
+		v1 = position - pos + points[i];
+
+		if (i != points.size())	v2 = pos + points[i+1];
+		else					v2 = pos + points[0];
+
+		float dot = Math::vectorDot(v2, v3);
+		float t1 = Math::vectorCross(v2, v1) / dot;
+		float t2 = Math::vectorDot(v1, v3) / dot;
+
+		if (t1 >= 0.f && (t2 >= 0.f && t2 <= 1.f))
+			return true;
+	}
+
 	return false;
 }
