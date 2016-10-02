@@ -18,6 +18,7 @@
 ###Performance:
 
 * ~~Add custom AABB other than sfml's floatRect~~ __(Done)__
+* ~~Add bitwise Collision checking~~ __(Done)__
 
 ###Code Features/Design:
 
