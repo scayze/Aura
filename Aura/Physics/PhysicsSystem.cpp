@@ -172,10 +172,9 @@ sf::Vector2f PhysicsSystem::circleCollide(CircleBody* b1, CircleBody* b2)
 	//float dist = Math::vectorDistance(b1->getPos(), b2->getPos());
 	float xdist = b1->getPos().x - b2->getPos().x;
 	float ydist = b1->getPos().y - b2->getPos().y;
-	float dist = xdist*xdist + ydist*ydist;
 	//Return true if the sum of the radians squared is smaller than the distance between the objects squared
 	float sumradius = b1->getRadius() + b2->getRadius();
-	if (sumradius*sumradius < dist) return sf::Vector2f(NULL,NULL);
+	if (sumradius*sumradius < xdist*xdist + ydist*ydist) return sf::Vector2f(NULL,NULL);
 
 	//Der Vektor um die die Objecte von einander entfernt werden müssen um nicht mehr zu kollidiern
 	sf::Vector2f pushVector;
