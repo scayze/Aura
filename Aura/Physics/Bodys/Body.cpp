@@ -100,35 +100,35 @@ AABB& Body::getAABB()
 void Body::debugDraw(sf::RenderWindow * rW)
 {
 
-	//sf::RectangleShape rec;
-	//rec.setPosition(sf::Vector2f(AABB.left, AABB.top));
-	//rec.setOutlineThickness(2);
-	//rec.setFillColor(sf::Color::Transparent);
-	//rec.setOutlineColor(sf::Color::Yellow);
-	//rec.setSize(sf::Vector2f(AABB.width, AABB.height));
+	sf::RectangleShape rec;
+	rec.setPosition(sf::Vector2f(aabb.left, aabb.top));
+	rec.setOutlineThickness(2);
+	rec.setFillColor(sf::Color::Transparent);
+	rec.setOutlineColor(sf::Color::Yellow);
+	rec.setSize(sf::Vector2f(aabb.width, aabb.height));
 
-	//rW->draw(rec);
+	rW->draw(rec);
 }
 
-std::bitset<8> Body::getCollisionType()
+unsigned char Body::getCollisionType()
 {
 	return collisionType;
 }
-void Body::setCollisionType(std::bitset<8> byte)
+void Body::setCollisionType(unsigned char byte)
 {
 	collisionType = byte;
 }
 
-std::bitset<8> Body::getCollisionWith()
+unsigned char Body::getCollisionWith()
 {
 	return collisionWith;
 }
-void Body::setCollisionWith(std::bitset<8> byte)
+void Body::setCollisionWith(unsigned char byte)
 {
 	collisionWith = byte;
 }
 
-void Body::addCollisionWith(std::bitset<8> byte)
+void Body::addCollisionWith(unsigned char byte)
 {
 	collisionWith = collisionWith | byte;
 }

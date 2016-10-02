@@ -39,8 +39,8 @@ class Body
 
 		int bodyType;
 
-		std::bitset<8> collisionType = 0b0000000;
-		std::bitset<8> collisionWith = 0b0000000;
+		unsigned char collisionType = 0b0000000;
+		unsigned char collisionWith = 0b0000000;
 
 		int mass;
 		void * owner;
@@ -86,12 +86,12 @@ class Body
 		void setOwner(void * o);
 
 
-		std::bitset<8> getCollisionType();
-		void setCollisionType(std::bitset<8> byte);
+		unsigned char getCollisionType();
+		void setCollisionType(unsigned char byte);
 
-		std::bitset<8> getCollisionWith();
-		void setCollisionWith(std::bitset<8> byte);
-		void addCollisionWith(std::bitset<8> byte);
+		unsigned char getCollisionWith();
+		void setCollisionWith(unsigned char byte);
+		void addCollisionWith(unsigned char byte);
 };
 
 #endif

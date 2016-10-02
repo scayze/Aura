@@ -117,16 +117,13 @@ void PhysicsSystem::tick()
 void PhysicsSystem::collide(Body * b1, Body * b2, sf::Vector2f pushVector)
 {
 	//Let the Objects know they are colliding
-	//WorldObject * w1 = reinterpret_cast<WorldObject*>(b1->getOwner());
-	//WorldObject * w2 = reinterpret_cast<WorldObject*>(b2->getOwner());
 	WorldObject * w1 = static_cast<WorldObject*>(b1->getOwner());
 	WorldObject * w2 = static_cast<WorldObject*>(b2->getOwner());
 	
 	if (w1 && w2)
 	{
-
-		w1->collide(static_cast<WorldObject*>(b1->getOwner()));
-		w2->collide(static_cast<WorldObject*>(b2->getOwner()));
+		w1->collide(w2);
+		w2->collide(w1);
 	}
 
 	if (b1->getMass() < 0 || b2->getMass() < 0) return;

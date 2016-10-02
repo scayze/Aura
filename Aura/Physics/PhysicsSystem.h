@@ -7,7 +7,7 @@
 #include "Bodys/ChainBody.h"
 #include "Bodys/EdgeBody.h"
 
-enum type;
+enum type : unsigned char;
 
 class PhysicsSystem
 {

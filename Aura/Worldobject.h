@@ -9,14 +9,13 @@
 #include "RessourceManager\Resources.h"
 #include "tweeny\tweeny.h"
 
-enum type
+enum type : unsigned char
 {
 	t_noCollide =	0b0000000,
 	t_terrain =		0b0000001,
 	t_spieler =		0b0000010,
 	t_aura =		0b0000100,
-	t_gegner =		0b0001000,
-	t_playerOnly = 5
+	t_gegner =		0b0001000
 };
 
 class WorldObject
@@ -29,9 +28,6 @@ class WorldObject
 		sf::Sprite sprite;
 
 		Body * body;
-
-
-
 
 	public:
 		WorldObject(float x, float y);
