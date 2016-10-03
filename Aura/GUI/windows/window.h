@@ -2,6 +2,7 @@
 #define Window_H
 
 #include <SFML\Graphics.hpp>
+#include "../../RessourceManager/Resources.h"
 
 class Window
 {
