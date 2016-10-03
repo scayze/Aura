@@ -11,21 +11,28 @@
 
 #include "GUI/windows/HealthBar.h"
 #include "GUI/windows/xpBar.h"
+#include "GUI/windows/WaveCounter.h"
 
 
 Spielfeld::Spielfeld(sf::RenderWindow *window)
 {
 	width=50;
 	height=60;
+	counter = 60000;
 	rWindow = window;
 
 	//Objects
 	player = createObject<Spieler>(100, 400);
 	//createObject<Drone>(200, 400);
-	createObject<LaserBox>(300.f, 350.f);
-	createObject<LaserBox>(500, 350.f);
-	createObject<LaserBox>(700, 400);
-	createObject<LaserBox>(300.f, 200);
+	createObject<Drone>(300.f, 350.f);
+	createObject<Drone>(500, 350.f);
+	createObject<Drone>(700, 400);
+	createObject<Drone>(300.f, 200);
+
+	createObject<Rammy>(300.f, 350.f);
+	createObject<Rammy>(500, 350.f);
+	createObject<Rammy>(700, 400);
+	createObject<Rammy>(300.f, 200);
 
 	//for (int i = 0; i < 10; i++)
 	//{
@@ -91,6 +98,9 @@ Spielfeld::Spielfeld(sf::RenderWindow *window)
 	backgound.clear(sf::Color(25, 25, 25));
 
 	//Gui
+	WaveCounter * waCo = new WaveCounter;
+	waCo->setCounter(counter);
+	guiSystem.addWindow(waCo);
 	HealthBar * hpBar = new HealthBar;
 	hpBar->setPlayer(player);
 	guiSystem.addWindow(hpBar);
@@ -102,7 +112,7 @@ Spielfeld::Spielfeld(sf::RenderWindow *window)
 
 void Spielfeld::tick()
 {
-
+	counter--;
 	for(unsigned int i=0; i < objects.size(); i++)
 	{
 		if(objects[i]->flag_destroy == true)
@@ -118,7 +128,7 @@ void Spielfeld::tick()
 	}
 	sf::Clock c;
 	pSystem.tick();
-	std::cout << c.getElapsedTime().asMicroseconds() << std::endl;
+	//std::cout << c.getElapsedTime().asMicroseconds() << std::endl;
 	guiSystem.tick();
 	//std::cout << objects.size();
 }

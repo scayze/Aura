@@ -15,6 +15,7 @@ class Spielfeld
 	private:
 		float width;
 		float height;
+		int counter;
 
 		Spieler * player;
 

@@ -151,6 +151,7 @@
     </ClCompile>
     <ClCompile Include="RessourceManager\Resources.cpp" />
     <ClCompile Include="Goat.cpp" />
+    <ClCompile Include="GUI\windows\WaveCounter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="math.h">
@@ -253,6 +254,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Goat.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\windows\WaveCounter.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

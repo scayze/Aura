@@ -167,9 +167,7 @@ bool PhysicsSystem::doCollide(Body * b1, Body *b2)
 sf::Vector2f PhysicsSystem::circleCollide(CircleBody* b1, CircleBody* b2)
 {
 	//Check if circles are even colliding
-
-	//Distance
-	//float dist = Math::vectorDistance(b1->getPos(), b2->getPos());
+	//Distances
 	float xdist = b1->getPos().x - b2->getPos().x;
 	float ydist = b1->getPos().y - b2->getPos().y;
 	//Return true if the sum of the radians squared is smaller than the distance between the objects squared
