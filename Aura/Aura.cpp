@@ -38,8 +38,8 @@ void Aura::collide(WorldObject * object)
 {
 	if (object->getBody()->getCollisionType() == t_gegner)
 	{
+		if (!static_cast<Figur*>(object)->isInvincible()) rotspd = -rotspd;
 		static_cast<Figur*>(object)->dealDamage(damage);
-		rotspd = -rotspd;
 	}
 }
 
@@ -47,6 +47,7 @@ float Aura::getRotspeed()
 {
 	return rotspd;
 }
+
 void Aura::setRotspeed(float rs)
 {
 	rotspd = rs;

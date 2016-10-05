@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Steuerung.h"
 
 #define Jannik Steuerung
@@ -7,9 +6,6 @@
 
 void main()
 {
-
 	Jannik du;
 	kleine fotze
-
-
 }

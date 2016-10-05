@@ -45,7 +45,7 @@ void Figur::tick()
 
 void Figur::heal(int n)
 {
-	if(healthPoints+n <= maxHealthPoints) healthPoints += n;
+	if(healthPoints + n <= maxHealthPoints) healthPoints += n;
 	else healthPoints = maxHealthPoints;
 }
 
@@ -59,9 +59,14 @@ int Figur::getMaxHealth()
 	return maxHealthPoints;
 }
 
+bool Figur::isInvincible()
+{
+	return invincibleTimer > 0;
+}
+
+
 Figur::~Figur()
 {
-
 	Xp * x = spielfeld->createObject<Xp>(body->getPos().x, body->getPos().y);
 	x->setAmount(xpDrop);
 }

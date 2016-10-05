@@ -3,7 +3,7 @@
 CircleBody::CircleBody() : Body()
 {
 	bodyType = Circle;
-	radius = 20;
+	radius = 10;
 }
 
 void CircleBody::updateAABB()

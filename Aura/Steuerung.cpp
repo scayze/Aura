@@ -15,6 +15,7 @@ Steuerung::Steuerung()
 
 
 	rWindow.setVerticalSyncEnabled(true);
+	
 
 	spielfeld = new Spielfeld(&rWindow);
 

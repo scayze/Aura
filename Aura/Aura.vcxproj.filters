@@ -80,12 +80,6 @@
     <ClCompile Include="Spieler.cpp">
       <Filter>Headerdateien\Objeckte\Figuren\Spieler</Filter>
     </ClCompile>
-    <ClCompile Include="ParticleEmitter.cpp">
-      <Filter>Headerdateien\Objeckte\PartikelStuff</Filter>
-    </ClCompile>
-    <ClCompile Include="Particle.cpp">
-      <Filter>Headerdateien\Objeckte\PartikelStuff</Filter>
-    </ClCompile>
     <ClCompile Include="Steuerung.cpp">
       <Filter>Headerdateien\Steuerung und co</Filter>
     </ClCompile>
@@ -152,6 +146,14 @@
     <ClCompile Include="RessourceManager\Resources.cpp" />
     <ClCompile Include="Goat.cpp" />
     <ClCompile Include="GUI\windows\WaveCounter.cpp" />
+    <ClCompile Include="ParticleSystem\ParticleEmitter.cpp">
+      <Filter>Headerdateien\Objeckte\PartikelStuff</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystem\ParticleSystem.cpp" />
+    <ClCompile Include="ParticleSystem\SpriteEmitter.cpp">
+      <Filter>Headerdateien\Objeckte\PartikelStuff</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystem\ShapeEmitter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="math.h">
@@ -174,12 +176,6 @@
     </ClInclude>
     <ClInclude Include="Spieler.h">
       <Filter>Headerdateien\Objeckte\Figuren\Spieler</Filter>
-    </ClInclude>
-    <ClInclude Include="ParticleEmitter.h">
-      <Filter>Headerdateien\Objeckte\PartikelStuff</Filter>
-    </ClInclude>
-    <ClInclude Include="Particle.h">
-      <Filter>Headerdateien\Objeckte\PartikelStuff</Filter>
     </ClInclude>
     <ClInclude Include="Steuerung.h">
       <Filter>Headerdateien\Steuerung und co</Filter>
@@ -257,6 +253,18 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="GUI\windows\WaveCounter.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystem\ParticleEmitter.h">
+      <Filter>Headerdateien\Objeckte\PartikelStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystem\ParticleSystem.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystem\SpriteEmitter.h">
+      <Filter>Headerdateien\Objeckte\PartikelStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystem\ShapeEmitter.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,38 +1,48 @@
-#include "spielfeld.h"
-#include "Spieler.h"
-#include "Aura.h"
-#include "Gegner.h"
 #include <iostream>
-#include "ParticleEmitter.h"
-#include "Terrain.h"
-
-#include "Drone.h"
-#include "rammy.h"
 
 #include "GUI/windows/HealthBar.h"
 #include "GUI/windows/xpBar.h"
 #include "GUI/windows/WaveCounter.h"
+
+#include "ParticleSystem\ParticleSystem.h"
+
+#include "spielfeld.h"
+
+#include "Terrain.h"
+
+#include "Spieler.h"
+
+#include "Drone.h"
+#include "rammy.h"
+
+
+//test
+#include "ParticleSystem\SpriteEmitter.h"
+#include "ParticleSystem\ShapeEmitter.h"
+
+
 
 
 Spielfeld::Spielfeld(sf::RenderWindow *window)
 {
 	width=50;
 	height=60;
-	counter = 60000;
+	counter = 6000;
 	rWindow = window;
 
 	//Objects
 	player = createObject<Spieler>(100, 400);
+	//createObject<ParticleEmitter>(500.f, 400.f);
 	//createObject<Drone>(200, 400);
-	createObject<Drone>(300.f, 350.f);
-	createObject<Drone>(500, 350.f);
-	createObject<Drone>(700, 400);
-	createObject<Drone>(300.f, 200);
+	//createObject<Drone>(300.f, 350.f);
+	//createObject<Drone>(500, 350.f);
+	//createObject<Drone>(700, 400);
+	//createObject<Drone>(300.f, 200);
 
-	createObject<Rammy>(300.f, 350.f);
-	createObject<Rammy>(500, 350.f);
-	createObject<Rammy>(700, 400);
-	createObject<Rammy>(300.f, 200);
+	//createObject<Rammy>(300.f, 350.f);
+	//createObject<Rammy>(500, 350.f);
+	//createObject<Rammy>(700, 400);
+	//createObject<Rammy>(300.f, 200);
 
 	//for (int i = 0; i < 10; i++)
 	//{
@@ -108,6 +118,24 @@ Spielfeld::Spielfeld(sf::RenderWindow *window)
 	xpBar->setPlayer(player);
 	guiSystem.addWindow(xpBar);
 
+	//test shit
+	SpriteEmitter * spE = new SpriteEmitter(sf::Vector2f(800, 400.f));
+	spE->setMaxVelocity(1.f);
+	spE->setCount(0);
+	partSystem.addEmitter(spE);
+
+	RectangleEmitter * sE = new RectangleEmitter(sf::Vector2f(300.f, 400.f));
+	sf::RectangleShape * rec = new sf::RectangleShape();
+	rec->setSize(sf::Vector2f(4, 4));
+	rec->setOrigin(2, 2);
+	rec->setFillColor(sf::Color::Yellow);
+
+	sE->setShape(rec);
+	sE->setMaxVelocity(1.5f);
+	sE->setCount(0);
+	partSystem.addEmitter(sE);
+
+
 }
 
 void Spielfeld::tick()
@@ -129,16 +157,19 @@ void Spielfeld::tick()
 	sf::Clock c;
 	pSystem.tick();
 	//std::cout << c.getElapsedTime().asMicroseconds() << std::endl;
+	partSystem.tick();
 	guiSystem.tick();
 	//std::cout << objects.size();
 }
 
 void Spielfeld::render()
 {
+	//Background
 	sf::Sprite bg;
 	bg.setTexture(backgound.getTexture());
 	bg.setPosition(0, 0);
 	rWindow->draw(bg);
+
 	for(unsigned int i=0; i < objects.size(); i++)
 	{
 		if(objects[i]->flag_visible)
@@ -148,6 +179,7 @@ void Spielfeld::render()
 		}
 	}
 
+	partSystem.render(rWindow);
 	pSystem.debugRender(rWindow);
 	guiSystem.render(rWindow);
 
@@ -162,6 +194,11 @@ Spieler * Spielfeld::getPlayer()
 PhysicsSystem * Spielfeld::getPhysicsSystem()
 {
 	return &pSystem;
+}
+
+ParticleSystem * Spielfeld::getParticleSystem()
+{
+	return &partSystem;
 }
 
 sf::RenderTexture * Spielfeld::getBackgroundTexture()

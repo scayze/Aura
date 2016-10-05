@@ -26,6 +26,8 @@ public:
 	void dealDamage(int n);
 	void heal(int n);
 
+	bool isInvincible();
+
 	int getHealthPoints();
 	int getMaxHealth();
 	virtual ~Figur();

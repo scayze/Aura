@@ -5,6 +5,7 @@
 #include <SFML\Graphics.hpp>
 #include "Physics/PhysicsSystem.h"
 #include "GUI/gui.h"
+#include "ParticleSystem\ParticleSystem.h"
 
 class WorldObject;
 class Spieler;
@@ -21,6 +22,7 @@ class Spielfeld
 
 		PhysicsSystem pSystem;
 		GUI_System guiSystem;
+		ParticleSystem partSystem;
 
 		std::vector<WorldObject*> objects;
 
@@ -35,6 +37,7 @@ class Spielfeld
 		void render();
 		Spieler * getPlayer();
 		PhysicsSystem * getPhysicsSystem();
+		ParticleSystem * getParticleSystem();
 		sf::RenderTexture * getBackgroundTexture();
 		void updateBackground();
 

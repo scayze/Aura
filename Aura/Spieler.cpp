@@ -11,6 +11,7 @@ Spieler::Spieler(float x, float y) : Figur(x,y)
 	sprite.setTextureRect(sf::IntRect(0,0,32,48));
 
 	body->setCollisionType(t_spieler);
+	static_cast<CircleBody*>(body)->setRadius(15);
 	speed = 5;
 
 	//leveling

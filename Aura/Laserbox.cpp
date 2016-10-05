@@ -52,8 +52,6 @@ void LaserBox::fireLaser()
 	//spielfeld->getPlayer()
 	Laser * laser = spielfeld->createObject<Laser>(body->getPos().x, body->getPos().y);
 
-
-	
 	static_cast<EdgeBody*>(laser->getBody())->setP2(Math::vectorSetMagnitude(dir, range));
 	laser->getSprite().setRotation(180 + (Math::vectorGetRotation(dir) * 180.f / Math::PI()));
 }

@@ -72,6 +72,8 @@
     <ClCompile Include="Aura.cpp" />
     <ClCompile Include="Goat.cpp" />
     <ClCompile Include="GUI\windows\WaveCounter.cpp" />
+    <ClCompile Include="ParticleSystem\ParticleSystem.cpp" />
+    <ClCompile Include="ParticleSystem\ShapeEmitter.cpp" />
     <ClCompile Include="Physics\Bodys\Body.cpp" />
     <ClCompile Include="Buff.cpp" />
     <ClCompile Include="Physics\Bodys\ChainBody.cpp" />
@@ -85,8 +87,8 @@
     <ClCompile Include="Laser.cpp" />
     <ClCompile Include="Laserbox.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Particle.cpp" />
-    <ClCompile Include="ParticleEmitter.cpp" />
+    <ClCompile Include="ParticleSystem\SpriteEmitter.cpp" />
+    <ClCompile Include="ParticleSystem\ParticleEmitter.cpp" />
     <ClCompile Include="Physics\PhysicsSystem.cpp" />
     <ClCompile Include="Physics\Bodys\PolygonBody.cpp" />
     <ClCompile Include="RessourceManager\Manager.cpp" />
@@ -108,6 +110,8 @@
     <ClInclude Include="Aura.h" />
     <ClInclude Include="Goat.h" />
     <ClInclude Include="GUI\windows\WaveCounter.h" />
+    <ClInclude Include="ParticleSystem\ParticleSystem.h" />
+    <ClInclude Include="ParticleSystem\ShapeEmitter.h" />
     <ClInclude Include="Physics\Bodys\Body.h" />
     <ClInclude Include="Buff.h" />
     <ClInclude Include="Physics\Bodys\ChainBody.h" />
@@ -121,8 +125,8 @@
     <ClInclude Include="Laser.h" />
     <ClInclude Include="LaserBox.h" />
     <ClInclude Include="math.h" />
-    <ClInclude Include="Particle.h" />
-    <ClInclude Include="ParticleEmitter.h" />
+    <ClInclude Include="ParticleSystem\SpriteEmitter.h" />
+    <ClInclude Include="ParticleSystem\ParticleEmitter.h" />
     <ClInclude Include="Physics\PhysicsSystem.h" />
     <ClInclude Include="Physics\Bodys\PolygonBody.h" />
     <ClInclude Include="rammy.h" />
