@@ -36,8 +36,11 @@ class ParticleEmitter
 		//Scale difference pssible between particles
 		float scaleOffset;
 
+		bool fadeOut = true;
+
 	public:
 		ParticleEmitter(sf::Vector2f pos);
+		~ParticleEmitter();
 
 		virtual void tick();
 		void init();
@@ -47,10 +50,11 @@ class ParticleEmitter
 
 		void setPosition(sf::Vector2f pos);
 		void setCount(int n);
-		void setDensity(int n);
+		void setDensity(float n);
 		void setLifetime(int n);
 		void setLifetimeOffset(int n);
 		void setMaxVelocity(float v);
+		void setFadeOut(bool b);
 
 		bool flag_destroy = false;
 };

@@ -3,6 +3,7 @@
 
 #include <SFML\Graphics.hpp>
 
+
 class Animation
 {
 	private:
@@ -13,6 +14,8 @@ class Animation
 		float maxspeed;
 		float time;
 		int dir;
+
+
 
 	public:
 		Animation();

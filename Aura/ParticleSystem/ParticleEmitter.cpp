@@ -3,12 +3,12 @@
 
 ParticleEmitter::ParticleEmitter(sf::Vector2f pos) : position(pos)
 {
-	density = 1.f;
+	density = 0.5f;
 
 	lifetime = 280;
 	lifetimeOffset = 20;
 
-	count = 10000;
+	count = 0;
 
 	//minVeloctiy = 1.f;
 	maxVelocity = 1.f;
@@ -67,7 +67,7 @@ void ParticleEmitter::setCount(int n)
 	count = n;
 }
 
-void ParticleEmitter::setDensity(int n)
+void ParticleEmitter::setDensity(float n)
 {
 	density = n;
 }
@@ -85,4 +85,15 @@ void ParticleEmitter::setLifetimeOffset(int n)
 void ParticleEmitter::setMaxVelocity(float v)
 {
 	maxVelocity = v;
+}
+
+void ParticleEmitter::setFadeOut(bool b)
+{
+	fadeOut = b;
+}
+
+
+ParticleEmitter::~ParticleEmitter()
+{
+
 }

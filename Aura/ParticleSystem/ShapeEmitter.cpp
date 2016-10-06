@@ -24,6 +24,7 @@ void ShapeEmitter<T>::render(sf::RenderWindow * rW)
 	//rW->draw(sprite);
 	for (unsigned int i = 0; i < particles.size(); i++)
 	{
+		if (fadeOut) shape->setFillColor(sf::Color(shape->getFillColor().r, shape->getFillColor().g, shape->getFillColor().b, (float)particles[i].time / (float)lifetime * 255));
 		shape->setPosition(particles[i].position);
 		shape->setScale(particles[i].size, particles[i].size);
 		rW->draw(*shape);
