@@ -9,6 +9,7 @@ struct Particle
 {
 	sf::Vector2f position;
 	sf::Vector2f velocity;
+	float size;
 	int time;
 };
 
@@ -29,12 +30,20 @@ class ParticleEmitter
 		//Maximum velocity of each particle
 		float maxVelocity;
 		//float minVeloctiy;
+		//Scale of Particle
+		float scale;
+		//float minVeloctiy
+		//Scale difference pssible between particles
+		float scaleOffset;
 
 	public:
 		ParticleEmitter(sf::Vector2f pos);
 
 		virtual void tick();
+		void init();
 		virtual void render(sf::RenderWindow * rW) = 0;
+
+		void addParticle();
 
 		void setPosition(sf::Vector2f pos);
 		void setCount(int n);

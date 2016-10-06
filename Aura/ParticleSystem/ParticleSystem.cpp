@@ -30,4 +30,5 @@ void ParticleSystem::tick()
 void ParticleSystem::addEmitter(ParticleEmitter * e)
 {
 	emitters.push_back(e);
+	e->init();
 }

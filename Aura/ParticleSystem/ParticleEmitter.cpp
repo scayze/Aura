@@ -10,20 +10,11 @@ ParticleEmitter::ParticleEmitter(sf::Vector2f pos) : position(pos)
 
 	count = 10000;
 
-
-
 	//minVeloctiy = 1.f;
 	maxVelocity = 1.f;
 
-	for (int i = 0; i < count; i++)
-	{
-		Particle * part = new Particle;
-
-		part->position = position;
-		part->velocity = sf::Vector2f((float)rand() / (float)RAND_MAX * maxVelocity * 2.f - maxVelocity, (float)rand() / (float)RAND_MAX * maxVelocity * 2.f - maxVelocity);
-		part->time = lifetime + rand() % lifetimeOffset * 2 - lifetimeOffset;
-		particles.push_back(*part);
-	}
+	scale = 2.f;
+	scaleOffset = 1.f;
 }
 
 
@@ -31,13 +22,7 @@ void ParticleEmitter :: tick()
 {
 	if((float)rand() / (float)RAND_MAX < density)
 	{
-		Particle * part = new Particle;
-
-		part->position = position;
-		part->velocity = sf::Vector2f((float)rand() / (float)RAND_MAX * maxVelocity * 2.f - maxVelocity, (float)rand() / (float)RAND_MAX * maxVelocity * 2.f - maxVelocity);
-		part->time = lifetime + rand() % lifetimeOffset * 2 - lifetimeOffset;
-		particles.push_back(*part);
-
+		addParticle();
 	}
 
 	for (unsigned int i = 0; i < particles.size(); i++)
@@ -52,6 +37,25 @@ void ParticleEmitter :: tick()
 
 	if (count > 0 && particles.empty()) flag_destroy = true;
 
+}
+
+void ParticleEmitter::init()
+{
+	for (int i = 0; i < count; i++)
+	{
+		addParticle();
+	}
+}
+
+void ParticleEmitter::addParticle()
+{
+	Particle * part = new Particle;
+
+	part->position = position;
+	part->size = scale + (float)rand() / (float)RAND_MAX * scaleOffset * 2 - scaleOffset;
+	part->velocity = sf::Vector2f((float)rand() / (float)RAND_MAX * maxVelocity * 2.f - maxVelocity, (float)rand() / (float)RAND_MAX * maxVelocity * 2.f - maxVelocity);
+	part->time = lifetime + rand() % lifetimeOffset * 2 - lifetimeOffset;
+	particles.push_back(*part);
 }
 
 void ParticleEmitter::setPosition(sf::Vector2f pos)

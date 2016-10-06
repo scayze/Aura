@@ -25,6 +25,7 @@ void ShapeEmitter<T>::render(sf::RenderWindow * rW)
 	for (unsigned int i = 0; i < particles.size(); i++)
 	{
 		shape->setPosition(particles[i].position);
+		shape->setScale(particles[i].size, particles[i].size);
 		rW->draw(*shape);
 	}
 }

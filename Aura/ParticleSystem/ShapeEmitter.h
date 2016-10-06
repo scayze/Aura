@@ -21,7 +21,7 @@ public:
 
 typedef ShapeEmitter<sf::RectangleShape>	RectangleEmitter;
 typedef ShapeEmitter<sf::CircleShape>		CircleEmitter;
-typedef ShapeEmitter<sf::ConvexShape>		ConvexeEmitter;
+typedef ShapeEmitter<sf::ConvexShape>		ConvexEmitter;
 
 
 #endif

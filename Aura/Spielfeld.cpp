@@ -122,6 +122,7 @@ Spielfeld::Spielfeld(sf::RenderWindow *window)
 	SpriteEmitter * spE = new SpriteEmitter(sf::Vector2f(800, 400.f));
 	spE->setMaxVelocity(1.f);
 	spE->setCount(0);
+	spE->setLifetime(100000);
 	partSystem.addEmitter(spE);
 
 	RectangleEmitter * sE = new RectangleEmitter(sf::Vector2f(300.f, 400.f));
@@ -131,8 +132,9 @@ Spielfeld::Spielfeld(sf::RenderWindow *window)
 	rec->setFillColor(sf::Color::Yellow);
 
 	sE->setShape(rec);
-	sE->setMaxVelocity(1.5f);
+	sE->setMaxVelocity(1.f);
 	sE->setCount(0);
+	sE->setLifetime(100000);
 	partSystem.addEmitter(sE);
 
 
