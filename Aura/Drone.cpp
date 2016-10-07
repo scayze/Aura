@@ -10,10 +10,10 @@ Drone::Drone(float x, float y) : Gegner(x, y)
 	moveTime = 0;
 	speed = 3.f;
 	time = 300;
-	laserBoxTimer = time/0.6f;
+	laserBoxTimer = (float)time/0.6f;
 
-	destination.x = rand();
-	destination.y = rand();
+	destination.x = (float)rand();
+	destination.y = (float)rand();
 	destination = Math::vectorSetMagnitude(destination, 80);
 	static_cast<CircleBody*>(body)->setRadius(9);
 }
@@ -51,20 +51,20 @@ void Drone::updateDestination()
 {
 	int i = 0;
 
-	destination.x = rand() - RAND_MAX / 2;
-	destination.y = rand() - RAND_MAX / 2;
+	destination.x = (float)rand() - (float)RAND_MAX / 2;
+	destination.y = (float)rand() - (float)RAND_MAX / 2;
 
 	while (i < 10 && Math::vectorDistance(body->getPos() + destination, spielfeld->getPlayer()->getBody()->getPos()) < 80.f)
 	{
 
 		i++;
-		destination.x = rand() - RAND_MAX / 2;
-		destination.y = rand() - RAND_MAX / 2;
+		destination.x = (float)rand() - (float)RAND_MAX / 2;
+		destination.y = (float)rand() - (float)RAND_MAX / 2;
 		std::cout << destination.x << std::endl;
 		destination = Math::vectorSetMagnitude(destination, 150);
 
 	}
 
 	vel = Math::vectorSetMagnitude(destination, speed);
-	moveTime = 150 / speed;
+	moveTime = 150.f / speed;
 }

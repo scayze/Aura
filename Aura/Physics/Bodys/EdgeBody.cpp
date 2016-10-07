@@ -23,8 +23,8 @@ void EdgeBody::updateAABB()
 	else			  aabb.top = pos.y + p2.y;
 
 	//Note: 0.0001 because otherwise completely diagonal / horizantal lines would have no height/with
-	aabb.width = std::fabs(p2.x)+ 0.0001;
-	aabb.height = std::fabs(p2.y) + 0.0001;
+	aabb.width = std::fabs(p2.x)+ 0.0001f;
+	aabb.height = std::fabs(p2.y) + 0.0001f;
 }
 
 bool EdgeBody::testPoint(sf::Vector2f v)

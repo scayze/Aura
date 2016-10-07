@@ -184,7 +184,7 @@ void Spieler::levelUp()
 {
 	level++;
 	xp = xp - xpUntilNextLevel;
-	xpUntilNextLevel = xpUntilNextLevel * 1.3;
+	xpUntilNextLevel = xpUntilNextLevel * 1.3f;
 }
 
 Aura * Spieler::getAura()

@@ -81,16 +81,16 @@ Spielfeld::Spielfeld(sf::RenderWindow *window)
 	p4_p1->setCollisionType(t_terrain);
 
 	p1_p2->setPos(0, 0);
-	p1_p2->setP2(sf::Vector2f(window->getSize().x, 0));
+	p1_p2->setP2(sf::Vector2f(window->getSize().x, 0.f));
 
 	p2_p3->setPos(p1_p2->getPos() + p1_p2->getP2());
-	p2_p3->setP2(sf::Vector2f(0, window->getSize().y));
+	p2_p3->setP2(sf::Vector2f(0.f, window->getSize().y));
 
 	p3_p4->setPos(p2_p3->getPos() + p2_p3->getP2());
-	p3_p4->setP2(sf::Vector2f(-p1_p2->getP2().x, 0));
+	p3_p4->setP2(sf::Vector2f(-p1_p2->getP2().x, 0.f));
 
 	p4_p1->setPos(p3_p4->getPos() + p3_p4->getP2());
-	p4_p1->setP2(sf::Vector2f(0, -p2_p3->getP2().y));
+	p4_p1->setP2(sf::Vector2f(0.f, -p2_p3->getP2().y));
 
 	p1_p2->updateAABB();
 	p2_p3->updateAABB();

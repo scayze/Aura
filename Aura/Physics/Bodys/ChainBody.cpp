@@ -41,7 +41,7 @@ void ChainBody::updateAABB()
 	float right = 0;
 	float down = 0;
 
-	for (int i = 0; i < points.size(); i++)
+	for (unsigned int i = 0; i < points.size(); i++)
 	{
 		if (points[i].x < aabb.left) aabb.left = points[i].x;
 		if (points[i].y < aabb.top) aabb.top = points[i].y;
