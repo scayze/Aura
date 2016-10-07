@@ -29,7 +29,12 @@ class ParticleEmitter
 		int lifetimeOffset;
 		//Maximum velocity of each particle
 		float maxVelocity;
-		//float minVeloctiy;
+		
+		//In radians
+		float direction = 0;
+		//Angle
+		float spreadAngle;
+
 		//Scale of Particle
 		float scale;
 		//float minVeloctiy
@@ -55,6 +60,8 @@ class ParticleEmitter
 		void setLifetimeOffset(int n);
 		void setMaxVelocity(float v);
 		void setFadeOut(bool b);
+		void setDirection(float d);
+		void setSpreadAngle(float d);
 
 		bool flag_destroy = false;
 };

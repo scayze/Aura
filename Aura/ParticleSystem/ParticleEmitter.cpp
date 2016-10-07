@@ -1,5 +1,6 @@
 #include "ParticleEmitter.h"
 #include <iostream>
+#include "../math.h"
 
 ParticleEmitter::ParticleEmitter(sf::Vector2f pos) : position(pos)
 {
@@ -8,9 +9,11 @@ ParticleEmitter::ParticleEmitter(sf::Vector2f pos) : position(pos)
 	lifetime = 280;
 	lifetimeOffset = 20;
 
+	direction = 0;
+	spreadAngle = Math::PI() *2;
+
 	count = 0;
 
-	//minVeloctiy = 1.f;
 	maxVelocity = 1.f;
 
 	scale = 2.f;
@@ -53,7 +56,8 @@ void ParticleEmitter::addParticle()
 
 	part->position = position;
 	part->size = scale + (float)rand() / (float)RAND_MAX * scaleOffset * 2 - scaleOffset;
-	part->velocity = sf::Vector2f((float)rand() / (float)RAND_MAX * maxVelocity * 2.f - maxVelocity, (float)rand() / (float)RAND_MAX * maxVelocity * 2.f - maxVelocity);
+	//Whattheflyingfuckwhydoesthisevenworkandhowdidicomeupwiththat
+	part->velocity = Math::vectorSetMagnitude(Math::vectorRotate(sf::Vector2f(cos(direction),sin(direction)), (float)rand() / (float)RAND_MAX * spreadAngle * 2 - spreadAngle), (float)rand() / (float)RAND_MAX * maxVelocity);
 	part->time = lifetime + rand() % lifetimeOffset * 2 - lifetimeOffset;
 	particles.push_back(*part);
 }
@@ -90,6 +94,16 @@ void ParticleEmitter::setMaxVelocity(float v)
 void ParticleEmitter::setFadeOut(bool b)
 {
 	fadeOut = b;
+}
+
+void ParticleEmitter::setDirection(float d)
+{
+	direction = d;
+}
+
+void ParticleEmitter::setSpreadAngle(float d)
+{
+	spreadAngle = d;
 }
 
 
