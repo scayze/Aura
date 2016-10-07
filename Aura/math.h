@@ -18,6 +18,7 @@ public:
 	static inline float vectorCross(sf::Vector2f v1, sf::Vector2f v2);
 	static inline float vectorDot(sf::Vector2f v1, sf::Vector2f v2);
 	static inline float vectorProjectOn(sf::Vector2f v1, sf::Vector2f axis);
+	static inline sf::Vector2f vectorRotate(sf::Vector2f v, float angle);
 	static inline sf::Vector2f vectorRotateAroundPoint(sf::Vector2f p, sf::Vector2f pivot, float angle);
 	static inline float vectorGetRotation(sf::Vector2f p);
 	static inline float PI();
@@ -83,6 +84,13 @@ float Math::vectorProjectOn(sf::Vector2f v, sf::Vector2f axis)
 	return vectorDot(v, vectorNormalize(axis));
 }
 
+//Rotate Vector
+sf::Vector2f Math::vectorRotate(sf::Vector2f v, float angle)
+{
+	return sf::Vector2f(v.x*cos(angle) - v.y*sin(angle), v.x*sin(angle) + v.y*cos(angle));
+
+	//		   Vector2f(a.x * cos(angle) – a.y * sin(angle), a.x * sin(angle) + a.y * cos(angle));
+}
 //Rotate Point around another point
 sf::Vector2f Math::vectorRotateAroundPoint(sf::Vector2f p, sf::Vector2f pivot, float angle)
 {
