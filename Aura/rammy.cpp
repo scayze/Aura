@@ -28,11 +28,27 @@ void Rammy::tick()
 	if (state == 0)
 	{
 		body->setVel(Math::vectorSetMagnitude(spielfeld->getPlayer()->getBody()->getPos() - body->getPos(), speed));
+
+
+
 		if (Math::vectorDistance(spielfeld->getPlayer()->getBody()->getPos(), body->getPos()) < ramActivationRange && cooldown <= 0)
 		{
-			state = 1;
-			cooldown = cooldownTime;
+			sf::Vector2f dir = spielfeld->getPlayer()->getBody()->getPos() - body->getPos();
+			std::vector<RayCastObject> resultVector = spielfeld->getPhysicsSystem()->rayCast(body->getPos(), dir);
 
+			float sqDistPlayer = Math::vectorSquaredDistance(body->getPos(), spielfeld->getPlayer()->getBody()->getPos());
+
+			bool pathToPlayerBlocked = false;
+			for (unsigned int i = 0; i < resultVector.size(); i++)
+			{
+				if (resultVector[i].point *resultVector[i].point  < sqDistPlayer) pathToPlayerBlocked = true;
+			}
+
+			if (!pathToPlayerBlocked)
+			{
+				state = 1;
+				cooldown = cooldownTime;
+			}
 		}
 	}
 	else if (state == 1)
