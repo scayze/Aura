@@ -19,7 +19,7 @@ bool CircleBody::testPoint(sf::Vector2f v)
 	return false;
 }
 
-bool CircleBody::rayCast(sf::Vector2f position, sf::Vector2f dir)
+float CircleBody::rayCast(sf::Vector2f position, sf::Vector2f dir)
 {
 
 	sf::Vector2f p1(position);
@@ -48,10 +48,12 @@ bool CircleBody::rayCast(sf::Vector2f position, sf::Vector2f dir)
 		)
 	{
 
-		return true;
+		return sqrt(2 * radius*projectedOnNormal - projectedOnNormal * projectedOnNormal);
+
+		//float l = sqrt(2*radius*projectedOnNormal - projectedOnNormal * projectedOnNormal)
 	}
 
-	return false;
+	return 0.f;
 }
 
 float CircleBody::getRadius()

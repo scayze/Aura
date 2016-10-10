@@ -58,7 +58,7 @@ class Body
 		int getType();
 
 		virtual bool testPoint(sf::Vector2f v) = 0;
-		virtual bool rayCast(sf::Vector2f pos, sf::Vector2f dir) = 0;
+		virtual float rayCast(sf::Vector2f pos, sf::Vector2f dir) = 0;
 		
 		virtual void updateAABB() = 0;
 		AABB& getAABB();

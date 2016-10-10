@@ -15,7 +15,7 @@ class PolygonBody : public Body
 		void debugDraw(sf::RenderWindow * rW);
 		void updateAABB();
 		bool testPoint(sf::Vector2f v);
-		bool rayCast(sf::Vector2f pos, sf::Vector2f dir);
+		float rayCast(sf::Vector2f pos, sf::Vector2f dir);
 
 		void updateCenterOfMass();
 		void setPoints(std::vector<sf::Vector2f> vec);

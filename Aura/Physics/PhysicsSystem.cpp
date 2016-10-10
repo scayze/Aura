@@ -471,9 +471,9 @@ bool PhysicsSystem::LineIntersect(sf::Vector2f p0, sf::Vector2f p1, sf::Vector2f
 	return false;
 }
 
-std::vector<Body*> PhysicsSystem::rayCast(sf::Vector2f pos, sf::Vector2f dir, bodyType bt, type wt)
+std::vector<RayCastObject> PhysicsSystem::rayCast(sf::Vector2f pos, sf::Vector2f dir, bodyType bt, type wt)
 {
-	std::vector<Body*> b;
+	std::vector<RayCastObject> r;
 	sf::Vector2f direction(Math::vectorNormalize(dir));
 	for (unsigned int i = 0; i < bodys.size(); i++)
 	{
@@ -481,14 +481,18 @@ std::vector<Body*> PhysicsSystem::rayCast(sf::Vector2f pos, sf::Vector2f dir, bo
 		{
 			if (wt== -1 || ( bodys[i]->getCollisionType() & wt ) > 0)
 			{
-				if (bodys[i]->rayCast(pos, direction))
+				float dist = bodys[i]->rayCast(pos, direction);
+				if (dist!=0.f)
 				{
-					b.push_back(bodys[i]);
+					RayCastObject * rco = new RayCastObject;
+					rco->body = bodys[i];
+					rco->point = dist;
+					r.push_back(*rco);
 				}
 			}
 		}
 
 	}
 
-	return b;
+	return r;
 }

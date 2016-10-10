@@ -18,7 +18,7 @@ public:
 	void updateAABB();
 
 	bool testPoint(sf::Vector2f v);
-	bool rayCast(sf::Vector2f pos, sf::Vector2f dir);
+	float rayCast(sf::Vector2f pos, sf::Vector2f dir);
 
 	void setP2(sf::Vector2f p2);
 	sf::Vector2f getP2();

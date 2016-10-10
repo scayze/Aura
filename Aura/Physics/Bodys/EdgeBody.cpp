@@ -32,7 +32,7 @@ bool EdgeBody::testPoint(sf::Vector2f v)
 	return false;
 }
 
-bool EdgeBody::rayCast(sf::Vector2f position, sf::Vector2f dir)
+float EdgeBody::rayCast(sf::Vector2f position, sf::Vector2f dir)
 {
 
 	sf::Vector2f v1 = position - pos;
@@ -45,7 +45,7 @@ bool EdgeBody::rayCast(sf::Vector2f position, sf::Vector2f dir)
 	float t2 = Math::vectorDot(v1, v3) / dot;
 
 	if (t1 >= 0.f && (t2 >= 0.f && t2 <= 1.f))
-		return true;// t1;
+		return t1;
 
 	return false;
 }

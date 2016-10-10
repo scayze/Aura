@@ -9,6 +9,12 @@
 
 enum type : unsigned char;
 
+struct RayCastObject
+{
+	Body * body;
+	float point;
+};
+
 class PhysicsSystem
 {
 
@@ -26,7 +32,7 @@ public:
 	void debugRender(sf::RenderWindow * rW);
 	void addBody(Body * b);
 
-	std::vector<Body*> rayCast(sf::Vector2f pos, sf::Vector2f dir, bodyType bt = (bodyType)-1, type wt = (type)-1);
+	std::vector<RayCastObject> rayCast(sf::Vector2f pos, sf::Vector2f dir, bodyType bt = (bodyType)-1, type wt = (type)-1);
 
 	bool doCollide(Body * b1, Body *b2);
 	void collide(Body * b1, Body *b2, sf::Vector2f pushVector);
