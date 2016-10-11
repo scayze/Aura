@@ -23,12 +23,12 @@
 ###Code Features/Design:
 
 * Add 'Bounce' Physics
-* Add Raycasting
+* ~~Add Raycasting~~ __(Done)__
   * ~~Core~~ __(Done)__
   * ~~CircleBody~~ __(Done)__
-  * PolygonBody
+  * ~~PolygonBody~~ __(Done)__
   * ~~EdgeBody~~ __(Done)__
-  * ChainBody
+  * ~~ChainBody~~ __(Done)__
 * Update the __BEAUTIFULL__ animation class
 * ~~RessourceManager templates~~ __(Done)__
 * ~~RessourceManager `loadTexture(sf::Texture, std::string path)`~~ __(Done)__
