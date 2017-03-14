@@ -5,10 +5,22 @@
 
 Spieler::Spieler(float x, float y) : Figur(x,y)
 {
+	Resources::loadTexture(texLeft,"Player/player_left.png");
+	Resources::loadTexture(texUp,"Player/player_up.png");
+	Resources::loadTexture(texDown,"Player/player_down.png");
+	Resources::loadTexture(texRight,"Player/player_right.png");
 
-	Resources::loadTexture(texture,"Player.png");
-	animation = Animation(&sprite,6,4);
-	sprite.setTextureRect(sf::IntRect(0,0,32,48));
+    sprLeft.setTexture(texLeft);
+    sprUp.setTexture(texUp);
+    sprDown.setTexture(texDown);
+    sprRight.setTexture(texRight);
+
+    sprLeft.setOrigin(sf::Vector2f(16,24));
+    sprUp.setOrigin(sf::Vector2f(16,24));
+    sprDown.setOrigin(sf::Vector2f(16,24));
+    sprRight.setOrigin(sf::Vector2f(16,24));
+
+	animation = Animation(&sprDown,7,32,48,7);
 
 	body->setCollisionType(t_spieler);
 	static_cast<CircleBody*>(body)->setRadius(15);
@@ -32,142 +44,18 @@ void Spieler::init(Spielfeld * spiel)
 
 void Spieler::tick()
 {
-	//std::vector<Body*> b = spielfeld->getPhysicsSystem()->rayCast(body->getPos(),sf::Vector2f(1, 1), Edge);
-	//for (unsigned int i = 0; i < b.size(); i++)
-	//{
-	//	b[i]->setPos(b[i]->getPos() - sf::Vector2f(1,1));
-	//}
+    sf::Vector2f joyPos;
+	if(sf::Joystick::isConnected(0))
+    {
 
+        joyPos.x = sf::Joystick::getAxisPosition(0, sf::Joystick::X) / 100;
+        joyPos.y = sf::Joystick::getAxisPosition(0, sf::Joystick::Y) / 100;
+        //std::cout << x << "   " << y << std::endl;
+        body->setVel(sf::Vector2f(speed * joyPos.x,speed * joyPos.y));
+    }
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-    {
-        if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-        {
-            body->setVel(body->getVel().x,-speed);
-            animation.animieren(48,32,48);
-            direction = 48;
-        }
-        else if (direction == 48 || direction == 144)
-        {
-            if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-            {
-                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-                {
-                    body->setVel(body->getVel().x,-speed);
-                    body->setVel(speed,body->getVel().y);
-                    animation.animieren(48,32,48);
-                }
-                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-                {
-                    body->setVel(body->getVel().x,-speed);
-                    body->setVel(-speed,body->getVel().y);
-                    animation.animieren(48,32,48);
-                }
-            }
-            else
-            {
-                sprite.setTextureRect(sf::IntRect(96,direction,32,48));
-            }
-        }
-    }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-    {
-        if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Up)&&!sf::Keyboard::isKeyPressed(sf::Keyboard::Right)&&!sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-        {
-            body->setVel(body->getVel().x,speed);
-            animation.animieren(144,32,48);
-            direction = 144;
-        }
-        else if (direction == 144 || direction == 48)
-        {
-            if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-            {
-                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-                {
-                    body->setVel(body->getVel().x,speed);
-                    body->setVel(speed,body->getVel().y);
-                    animation.animieren(144,32,48);
-                }
-                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-                {
-                    body->setVel(body->getVel().x,speed);
-                    body->setVel(-speed,body->getVel().y);
-                    animation.animieren(144,32,48);
-                }
-            }
-            else
-            {
-                sprite.setTextureRect(sf::IntRect(96,direction,32,48));
-            }
-        }
-    }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-    {
-        if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Left)&&!sf::Keyboard::isKeyPressed(sf::Keyboard::Up)&&!sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-        {
-            body->setVel(speed,body->getVel().y);
-            animation.animieren(96,32,48);
-            direction = 96;
-        }
-        else if (direction == 96 || direction == 0)
-        {
-            if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-            {
-                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-                {
-                    body->setVel(body->getVel().x,-speed);
-                    body->setVel(speed,body->getVel().y);
-                    animation.animieren(96,32,48);
-                }
-                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-                {
-                    body->setVel(body->getVel().x,speed);
-                    body->setVel(speed,body->getVel().y);
-                    animation.animieren(96,32,48);
-                }
-            }
-            else
-            {
-                sprite.setTextureRect(sf::IntRect(96,direction,32,48));
-            }
-        }
-    }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-    {
-        if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Right)&&!sf::Keyboard::isKeyPressed(sf::Keyboard::Up)&&!sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-        {
-            body->setVel(-speed,body->getVel().y);
-            animation.animieren(0,32,48);
-            direction = 0;
-        }
-        else if (direction == 0 || direction == 96)
-        {
-            if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-            {
-                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-                {
-                    body->setVel(body->getVel().x,-speed);
-                    body->setVel(-speed,body->getVel().y);
-                    animation.animieren(0,32,48);
-                }
-                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-                {
-                    body->setVel(body->getVel().x,speed);
-                    body->setVel(-speed,body->getVel().y);
-                    animation.animieren(0,32,48);
-                }
-            }
-            else
-            {
-                sprite.setTextureRect(sf::IntRect(96,direction,32,48));
-            }
-        }
-    }
-    if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-    {
-        sprite.setTextureRect(sf::IntRect(96,direction,32,48));
-    }
-	
+    animation.setSpeed(Math::vectorLength(joyPos));
+	animation.tick();
 	aura->getBody()->setPos(body->getPos());
 	Figur::tick();
 
@@ -180,6 +68,22 @@ void Spieler::tick()
 	if (xp >= xpUntilNextLevel) levelUp();
 
 	//spielfeld->createObject<Aura>(sprite.getPosition().x,sprite.getPosition().y);
+}
+
+void Spieler::render(sf::RenderWindow * rW)
+{
+    dir direction = Math::vectorGetDirection(body->getVel());
+    if(direction != oldDirection)
+    {
+        if(direction==DIR_LEFT) animation.changeSprite(&sprLeft);
+        else if(direction==DIR_UP) animation.changeSprite(&sprUp);
+        else if(direction==DIR_RIGHT) animation.changeSprite(&sprRight);
+        else if(direction==DIR_DOWN) animation.changeSprite(&sprDown);
+        oldDirection = direction;
+    }
+
+    animation.getSprite()->setPosition(body->getPos());
+    rW->draw(*animation.getSprite());
 }
 
 void Spieler::levelUp()

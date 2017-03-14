@@ -10,7 +10,19 @@ class Spieler : public Figur
 	private:
 		Aura * aura;
 		Animation animation;
-		int direction;
+
+		sf::Sprite sprLeft;
+		sf::Texture texLeft;
+
+		sf::Sprite sprUp;
+		sf::Texture texUp;
+
+		sf::Sprite sprRight;
+		sf::Texture texRight;
+
+		sf::Sprite sprDown;
+		sf::Texture texDown;
+
 		int level;
 
 		int xpUntilNextLevel;
@@ -18,11 +30,14 @@ class Spieler : public Figur
 
 		void levelUp();
 
+		dir oldDirection;
+
 
 	public:
 		Spieler(float x, float y);
 		void init(Spielfeld * spiel);
 		void tick();
+		void render(sf::RenderWindow * rW);
 
 		void collide(WorldObject *obj);
 		void giveXP(int n);

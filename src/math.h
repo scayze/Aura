@@ -4,6 +4,15 @@
 #include <SFML/System/Vector2.hpp>
 #include <cmath>
 
+enum dir
+{
+	DIR_NONE = -1,
+	DIR_LEFT = 0,
+	DIR_UP = 1,
+	DIR_RIGHT = 2,
+	DIR_DOWN = 3
+};
+
 class Math
 {
 private:
@@ -23,6 +32,7 @@ public:
 	static inline sf::Vector2f vectorRotateAroundPoint(sf::Vector2f p, sf::Vector2f pivot, float angle);
 	static inline float vectorGetRotation(sf::Vector2f p);
 	static inline float PI();
+	static inline dir vectorGetDirection(sf::Vector2f d);
 
 };
 
@@ -33,20 +43,20 @@ float Math::vectorDistance(sf::Vector2f v1, sf::Vector2f v2)
 	return std::sqrt(std::fabs((v1.x - v2.x) * (v1.x - v2.x) + (v1.y - v2.y) * (v1.y - v2.y)));
 }
 
-//Get die Länge des Vektors quadriert
+//Get die Lï¿½nge des Vektors quadriert
 float Math::vectorSquaredDistance(sf::Vector2f v1, sf::Vector2f v2)
 {
 	//Satz Pythagoras -  sqrt
 	return std::fabs((v1.x - v2.x) * (v1.x - v2.x) + (v1.y - v2.y) * (v1.y - v2.y));
 }
 
-//Get die Länge des Vektors
+//Get die Lï¿½nge des Vektors
 float Math::vectorLength(sf::Vector2f v)
 {
 	return std::sqrt(v.x * v.x + v.y * v.y);
 }
 
-//Bringe Vektor auf die Länge 1
+//Bringe Vektor auf die Lï¿½nge 1
 sf::Vector2f Math::vectorNormalize(sf::Vector2f v)
 {
 	float length = std::sqrt(v.x * v.x + v.y * v.y);
@@ -56,7 +66,7 @@ sf::Vector2f Math::vectorNormalize(sf::Vector2f v)
 	return v;
 }
 
-//Bringe VEktor auf gewünschte Länge
+//Bringe VEktor auf gewï¿½nschte Lï¿½nge
 sf::Vector2f Math::vectorSetMagnitude(sf::Vector2f v, float m)
 {
 	float length = std::sqrt(v.x * v.x + v.y * v.y);
@@ -90,7 +100,7 @@ sf::Vector2f Math::vectorRotate(sf::Vector2f v, float angle)
 {
 	return sf::Vector2f(v.x*cos(angle) - v.y*sin(angle), v.x*sin(angle) + v.y*cos(angle));
 
-	//		   Vector2f(a.x * cos(angle) – a.y * sin(angle), a.x * sin(angle) + a.y * cos(angle));
+	//		   Vector2f(a.x * cos(angle) ï¿½ a.y * sin(angle), a.x * sin(angle) + a.y * cos(angle));
 }
 //Rotate Point around another point
 sf::Vector2f Math::vectorRotateAroundPoint(sf::Vector2f p, sf::Vector2f pivot, float angle)
@@ -133,6 +143,21 @@ sf::Vector2f Math::vectorRotateToVector(sf::Vector2f v1, sf::Vector2f v2, float 
 		else		return Math::vectorRotate(v1, -angle);
 	}
 
+}
+
+dir Math::vectorGetDirection(sf::Vector2f d)
+{
+	if(std::fabs(d.x) > std::fabs(d.y))
+	{
+		if(d.x>0) return DIR_RIGHT;
+		return DIR_LEFT;
+	}
+	else if(std::fabs(d.x) < std::fabs(d.y))
+	{
+		if(d.y>0) return DIR_DOWN;
+		return DIR_UP;
+	}
+	return DIR_NONE;
 }
 
 
