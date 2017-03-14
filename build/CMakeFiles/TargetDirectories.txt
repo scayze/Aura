@@ -1,3 +1,0 @@
-/home/scayze/Projects/Aura/build/CMakeFiles/edit_cache.dir
-/home/scayze/Projects/Aura/build/CMakeFiles/rebuild_cache.dir
-/home/scayze/Projects/Aura/build/CMakeFiles/Aura.dir
