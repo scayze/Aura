@@ -1,0 +1,20 @@
+#Cmake ignores
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+
+#ignore log
+log.txt
+
+#Ignore Bin and build Directory
+[Bb]in/
+[Bb]uild/
+
+#ignore VS code files 
+.vscode/
